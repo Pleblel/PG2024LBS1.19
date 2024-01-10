@@ -5,7 +5,6 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class weaponHand : MonoBehaviour
 {
-    bool switchHand = true;
     public GameObject player;
     void Update()
     {

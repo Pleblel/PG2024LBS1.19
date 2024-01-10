@@ -11,35 +11,37 @@ public class spell : MonoBehaviour
     public float mSpeed2;
     public float mSpeed3;
     public GameObject weap;
-    void Start()
+    public GameObject rotation;
+    public int spells;
+    public void spellCast()
     {
+        transform.rotation = rotation.transform.rotation;
         weapon multSpl = weap.GetComponent<weapon>();
         if (multSpl.spells == 0)
         {
-            rb.AddRelativeForce(new Vector2(0.01f * mSpeed1, 0));
+            Quaternion rotation = transform.rotation;
+            var spellInstance = Instantiate(gameObject, weap.transform.position, rotation);
+            spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed1, 0));
 
         }
         if (multSpl.spells == 1)
         {
-            rb.AddRelativeForce(new Vector2(0.01f * mSpeed2, 0));
+            Quaternion rotation = transform.rotation;
+            var spellInstance = Instantiate(gameObject, weap.transform.position, rotation);
+            spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed2, 0));
+            spellInstance.transform.localScale = new Vector3(2, 2, 2);
         }
         if (multSpl.spells == 2)
         {
-            rb.AddRelativeForce(new Vector2(0.01f * mSpeed3, 0));
+            Quaternion rotation = transform.rotation;
+            var spellInstance = Instantiate(gameObject, weap.transform.position, rotation);
+            spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed3, 0));
         }
         if (multSpl.spells == 3)
         {
-            
-        }
-    }
-    public void Update()
-    {
-        weapon multSpl = weap.GetComponent<weapon>();
-        if (multSpl.spells == 1)
-        {
-            transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
-        }
-    }
 
+        }
+        Debug.Log(multSpl.spells);
+    }
 }
 

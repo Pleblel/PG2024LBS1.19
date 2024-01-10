@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEditor.FilePathAttribute;
 
 public class weapon : MonoBehaviour
@@ -17,18 +18,21 @@ public class weapon : MonoBehaviour
     void Update()
     {
         cooldown += 1 * Time.deltaTime;
-        spell1Func();
-        spell2Func();
-        spell3Func();
-        spell4Func();
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            spell1Func();
+            spell2Func();
+            spell3Func();
+            spell4Func();
+        }
         spellSwap();
     }
     public void spell1Func()
     {
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim1 && spells == 0)
         {
-            Quaternion rotation = weapHand.transform.rotation;
-            Instantiate(spell1, transform.position, rotation);
+            spell multSpl = spell1.GetComponent<spell>();
+            multSpl.spellCast();
             cooldown = 0;
         }
     }
@@ -37,7 +41,9 @@ public class weapon : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim2 && spells == 1)
         {
             Quaternion rotation = weapHand.transform.rotation;
+            spell multSpl = spell1.GetComponent<spell>();
             Instantiate(spell1, transform.position, rotation);
+            multSpl.spellCast();
             cooldown = 0;
         }
     }
@@ -46,7 +52,9 @@ public class weapon : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim3 && spells == 2)
         {
             Quaternion rotation = weapHand.transform.rotation;
+            spell multSpl = spell1.GetComponent<spell>();
             Instantiate(spell1, transform.position, rotation);
+            multSpl.spellCast();
             cooldown = 0;
         }
     }
@@ -55,7 +63,9 @@ public class weapon : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim2 && spells == 3)
         {
             Quaternion rotation = weapHand.transform.rotation;
+            spell multSpl = spell1.GetComponent<spell>();
             Instantiate(spell1, transform.position, rotation);
+            multSpl.spellCast();
             cooldown = 0;
         }
     }
