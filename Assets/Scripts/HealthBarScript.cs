@@ -6,8 +6,7 @@ using TMPro;
 
 public class HealthBar : MonoBehaviour
 {
-    public Image healthBarImage;
-    public TextMeshProUGUI healthBarText;
+    
     public Slider slider;
 
     //kod som gör att healthbaren rör på sig baserat på ditt nuvarande HP

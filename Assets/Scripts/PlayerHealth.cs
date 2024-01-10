@@ -31,5 +31,9 @@ public class PlayerHealth : MonoBehaviour
     void TakeDamage(int damage)
     {
         currenthealth -= damage;
+
+        healthbar.SetHealth(currenthealth);
     }
 }
+
+
