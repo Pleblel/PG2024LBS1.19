@@ -9,16 +9,22 @@ public class manaScript : MonoBehaviour
     public float maxMana = 100;
     public float currentMana;
     public float manaGain = 1/12f;
-
+    public float manaPercentage;
     // Start is called before the first frame update
     void Start()
     {
-        currentMana = maxMana;
+        currentMana = 2;
     }
 
     private void FixedUpdate()
     {
-        currentMana += manaGain;
+        if (currentMana <= maxMana)
+        {
+            currentMana += manaGain;
+            currentMana = Mathf.Clamp(currentMana, 0, maxMana);
+            UpdateManaBar();
+        }
+  
     }
 
     public void UseMana(float manaUsed)
@@ -31,7 +37,7 @@ public class manaScript : MonoBehaviour
     // Update is called once per frame
     private void UpdateManaBar()
     {
-        float manaPercentage = currentMana / maxMana;
-        manaBarImage.fillAmount = manaPercentage;
+        manaPercentage = currentMana / maxMana * 100;
+        manaBarImage.fillAmount = manaPercentage / 100;
     }
 }
