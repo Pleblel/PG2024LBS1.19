@@ -13,7 +13,7 @@ public class weapon : MonoBehaviour
     public float cooldownLim2;
     public float cooldownLim3;
     public float cooldownLim4;
-    public int spell;
+    public int spells;
     void Update()
     {
         cooldown += 1 * Time.deltaTime;
@@ -25,7 +25,7 @@ public class weapon : MonoBehaviour
     }
     public void spell1Func()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim1 && spell == 0)
+        if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim1 && spells == 0)
         {
             Quaternion rotation = weapHand.transform.rotation;
             Instantiate(spell1, transform.position, rotation);
@@ -34,7 +34,7 @@ public class weapon : MonoBehaviour
     }
     public void spell2Func()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim2 && spell == 1)
+        if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim2 && spells == 1)
         {
             Quaternion rotation = weapHand.transform.rotation;
             Instantiate(spell1, transform.position, rotation);
@@ -43,7 +43,7 @@ public class weapon : MonoBehaviour
     }
     public void spell3Func()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim3 && spell == 2)
+        if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim3 && spells == 2)
         {
             Quaternion rotation = weapHand.transform.rotation;
             Instantiate(spell1, transform.position, rotation);
@@ -52,7 +52,7 @@ public class weapon : MonoBehaviour
     }
     public void spell4Func()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim2 && spell == 3)
+        if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim2 && spells == 3)
         {
             Quaternion rotation = weapHand.transform.rotation;
             Instantiate(spell1, transform.position, rotation);
@@ -63,11 +63,11 @@ public class weapon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            spell += 1;
+            spells += 1;
         }
-        if (Input.GetKey(KeyCode.F) && spell == 4)
+        if (Input.GetKey(KeyCode.F) && spells == 4)
         {
-            spell = 0;
+            spells = 0;
         }
     }
 }

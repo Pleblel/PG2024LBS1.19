@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: -4615466541224666077}
-  mSpeed: 3
+  mSpeed1: 1
+  mSpeed2: 1
+  mSpeed3: 1
+  weap: {fileID: 4688041699727659056, guid: 8391586d5a5bc894399fc05718b22726, type: 3}
 --- !u!50 &-4615466541224666077
 Rigidbody2D:
   serializedVersion: 4
