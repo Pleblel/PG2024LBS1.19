@@ -8,11 +8,17 @@ public class manaScript : MonoBehaviour
     public Image manaBarImage;
     public float maxMana = 100;
     public float currentMana;
+    public float manaGain = 1/12f;
 
     // Start is called before the first frame update
     void Start()
     {
         currentMana = maxMana;
+    }
+
+    private void FixedUpdate()
+    {
+        currentMana += manaGain;
     }
 
     public void UseMana(float manaUsed)
