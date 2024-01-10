@@ -40,9 +40,7 @@ public class weapon : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim2 && spells == 1)
         {
-            Quaternion rotation = weapHand.transform.rotation;
             spell multSpl = spell1.GetComponent<spell>();
-            Instantiate(spell1, transform.position, rotation);
             multSpl.spellCast();
             cooldown = 0;
         }
@@ -51,9 +49,7 @@ public class weapon : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim3 && spells == 2)
         {
-            Quaternion rotation = weapHand.transform.rotation;
             spell multSpl = spell1.GetComponent<spell>();
-            Instantiate(spell1, transform.position, rotation);
             multSpl.spellCast();
             cooldown = 0;
         }
@@ -62,9 +58,7 @@ public class weapon : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim2 && spells == 3)
         {
-            Quaternion rotation = weapHand.transform.rotation;
             spell multSpl = spell1.GetComponent<spell>();
-            Instantiate(spell1, transform.position, rotation);
             multSpl.spellCast();
             cooldown = 0;
         }

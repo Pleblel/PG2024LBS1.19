@@ -29,19 +29,17 @@ public class spell : MonoBehaviour
             Quaternion rotation = transform.rotation;
             var spellInstance = Instantiate(gameObject, weap.transform.position, rotation);
             spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed2, 0));
-            spellInstance.transform.localScale = new Vector3(2, 2, 2);
         }
         if (multSpl.spells == 2)
         {
             Quaternion rotation = transform.rotation;
             var spellInstance = Instantiate(gameObject, weap.transform.position, rotation);
             spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed3, 0));
-        }
+         }
         if (multSpl.spells == 3)
         {
 
         }
-        Debug.Log(multSpl.spells);
     }
 }
 
