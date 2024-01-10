@@ -65,7 +65,7 @@ public class weapon : MonoBehaviour
         {
             spell += 1;
         }
-        if (Input.GetKey(KeyCode.F) && spell == 3)
+        if (Input.GetKey(KeyCode.F) && spell == 4)
         {
             spell = 0;
         }
