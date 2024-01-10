@@ -25,6 +25,8 @@ public class manaScript : MonoBehaviour
         {
             currentMana = maxMana;
         }
+
+
         UpdateManaBar();
     }
 
