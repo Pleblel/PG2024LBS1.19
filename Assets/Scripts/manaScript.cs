@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class manaScript : MonoBehaviour
 {
-    public Image manaBarImage;
+    Image manaBarImage;
     public float maxMana = 100;
     public float currentMana;
     public float manaGain = 1/12f;
@@ -13,18 +13,19 @@ public class manaScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentMana = 2;
+        manaBarImage = gameObject.GetComponent<Image>();
+        currentMana = 35;
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        if (currentMana <= maxMana)
+        manaGain = 1/12f;
+        currentMana += manaGain;
+        if (currentMana > maxMana)
         {
-            currentMana += manaGain;
-            currentMana = Mathf.Clamp(currentMana, 0, maxMana);
-            UpdateManaBar();
+            currentMana = maxMana;
         }
-  
+        UpdateManaBar();
     }
 
     public void UseMana(float manaUsed)
@@ -37,7 +38,7 @@ public class manaScript : MonoBehaviour
     // Update is called once per frame
     private void UpdateManaBar()
     {
-        manaPercentage = currentMana / maxMana * 100;
-        manaBarImage.fillAmount = manaPercentage / 100;
+        manaPercentage = currentMana / maxMana;
+        manaBarImage.fillAmount = manaPercentage;
     }
 }
