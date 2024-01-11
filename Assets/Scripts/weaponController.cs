@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class weaponController : MonoBehaviour
 {
-    public Animator anim;
     public SpriteRenderer sr;
     public GameObject player;
     public GameObject hand;
