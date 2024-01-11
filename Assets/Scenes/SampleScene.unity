@@ -582,6 +582,75 @@ MonoBehaviour:
   player: {fileID: 780220412}
   camSpeed: 1
   maxDis: 1
+--- !u!1001 &520515428
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4374113535934272762, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278545852505541661, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278545852505541661, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278545852505541661, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278545852505541661, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278545852505541661, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278545852505541661, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278545852505541661, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278545852505541661, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278545852505541661, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278545852505541661, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797869766425293080, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682609143698488733, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 780220412}
+    - target: {fileID: 6682609143698488733, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: mvmSpeedEnemy
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
 --- !u!1 &541737414
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +907,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c159fb84445d2b4fb1c1bdc64cc31db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manaBarImage: {fileID: 0}
+  maxMana: 100
+  currentMana: 0
+  manaGain: 0.083333336
   spell1: {fileID: 516070100}
   weapHand: {fileID: 1766435442}
   cooldownLim1: 1
@@ -898,7 +971,7 @@ GameObject:
   - component: {fileID: 780220413}
   - component: {fileID: 780220418}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1931,13 +2004,9 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1568124195}
-  - {fileID: 541737416}
-  - {fileID: 1204255727}
-  - {fileID: 314425966}
-  - {fileID: 1292245192}
   - {fileID: 519420032}
   - {fileID: 780220417}
   - {fileID: 516070104}
   - {fileID: 926472486}
   - {fileID: 2140978829}
+  - {fileID: 520515428}
