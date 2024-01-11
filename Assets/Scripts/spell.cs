@@ -38,7 +38,7 @@ public class spell : MonoBehaviour
          }
         if (multSpl.spells == 3)
         {
-
+            var spellInstance = Instantiate(gameObject, Input.mousePosition, Quaternion.identity);
         }
     }
 }
