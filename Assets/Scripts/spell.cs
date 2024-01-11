@@ -16,7 +16,8 @@ public class spell : MonoBehaviour
     public void spellCast()
     {
         transform.rotation = rotation.transform.rotation;
-        weapon multSpl = weap.GetComponent<weapon>();
+        Vector3 mousePos = Input.mousePosition;
+        weapon multSpl = weap.GetComponent<weapon>();,
         if (multSpl.spells == 0)
         {
             Quaternion rotation = transform.rotation;
@@ -29,6 +30,7 @@ public class spell : MonoBehaviour
             Quaternion rotation = transform.rotation;
             var spellInstance = Instantiate(gameObject, weap.transform.position, rotation);
             spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed2, 0));
+            spellInstance.transform.localScale = new Vector3(2, 2, 0);
         }
         if (multSpl.spells == 2)
         {
@@ -38,7 +40,7 @@ public class spell : MonoBehaviour
          }
         if (multSpl.spells == 3)
         {
-            var spellInstance = Instantiate(gameObject, Input.mousePosition, Quaternion.identity);
+            var spellInstance = Instantiate(gameObject, mousePos, Quaternion.identity);
         }
     }
 }
