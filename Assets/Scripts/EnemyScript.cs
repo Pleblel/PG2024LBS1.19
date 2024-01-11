@@ -26,7 +26,16 @@ public class EnemyScript : MonoBehaviour
         EnemyRigidBody.velocity = dirForce;
         if (Mathf.Abs(dir.x) <= 0.7f || Mathf.Abs(dir.y) <= 0.7f)
         {
-
+            EnemyAttack();
         }
+    }
+
+    public void EnemyAttack()
+    {
+
+
+
+
+
     }
 }
