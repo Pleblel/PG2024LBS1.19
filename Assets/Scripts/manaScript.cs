@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,15 +12,23 @@ public class manaScript : MonoBehaviour
     public float currentMana;
     public float manaGain = 1/12f;
     public float manaPercentage;
+    public int timeInMsSFX;
+    [SerializeField]
+    private AudioClip ManabarfullSFX;
+    public float ManaReminderVolume;
+
+    private float timer;
     // Start is called before the first frame update
     void Start()
     {
         manaBarImage = gameObject.GetComponent<Image>();
-        currentMana = 35;
+        currentMana = 80;
     }
 
-    void FixedUpdate()
+    void Update()
     {
+        timer += Time.deltaTime;
+
         manaGain = 1/12f;
         currentMana += manaGain;
         if (currentMana > maxMana)
@@ -42,5 +52,14 @@ public class manaScript : MonoBehaviour
     {
         manaPercentage = currentMana / maxMana;
         manaBarImage.fillAmount = manaPercentage;
+
+        //play audio
+        if (timer > 2 && manaPercentage == 1)
+        {
+            Debug.Log(SoundFXManager.instance);
+            print("audio");
+            SoundFXManager.instance.PlaySoundFXclip(ManabarfullSFX, transform, ManaReminderVolume);
+            timer = 0;
+        }
     }
 }
