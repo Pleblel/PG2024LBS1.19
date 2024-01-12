@@ -1166,7 +1166,7 @@ MonoBehaviour:
   attackRange: 0.8
   playerLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   enemyDamage: 20
   timer: 0
   Player: {fileID: 780220412}
