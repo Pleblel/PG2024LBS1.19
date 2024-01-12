@@ -7,6 +7,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     GameObject Player;
 
+    public Vector2 dir;
     public float mvmSpeedEnemy;
 
     Rigidbody2D EnemyRigidBody;
@@ -19,7 +20,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 dir = Player.transform.position - transform.position;
+        dir = Player.transform.position - transform.position;
         Vector2 dirForce = dir.normalized * mvmSpeedEnemy;
         EnemyRigidBody.velocity = dirForce;
     }
