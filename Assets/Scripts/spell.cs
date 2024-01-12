@@ -16,6 +16,7 @@ public class spell : MonoBehaviour
     public GameObject rotation;
     public GameObject main;
     public GameObject hitbox4;
+    public GameObject hitbox3;
     public GameObject hitbox2;
     public GameObject hitbox1;
     public int spells;
@@ -80,10 +81,15 @@ public class spell : MonoBehaviour
     {
         Quaternion rotation = transform.rotation;
         var spellInstance = Instantiate(main, weap.transform.position, rotation);
+        var spellHitbox = Instantiate(hitbox3, weap.transform.position, rotation);
         spellInstance.GetComponent<Animator>().Play("Stone_anim");
         spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed1, 0));
+        spellHitbox.transform.parent = spellInstance.transform;
         yield return new WaitForSecondsRealtime(1);
+        spellInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        yield return new WaitForSecondsRealtime(10);
         Destroy(spellInstance);
+        Destroy(spellHitbox);
     }
     IEnumerator spell3()
     {

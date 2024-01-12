@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-8397486803751350056
+--- !u!1102 &-8757423875958170550
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water_anim
-  m_Speed: 1
+  m_Speed: 0.25
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -164,14 +164,14 @@ AnimatorStateMachine:
     m_State: {fileID: 6528382589271708813}
     m_Position: {x: 580, y: -10, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -8397486803751350056}
-    m_Position: {x: 560, y: 70, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -3679743868920309160}
     m_Position: {x: 570, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 566059392848052537}
-    m_Position: {x: 790, y: 60, z: 0}
+    m_Position: {x: 360, y: 140, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -8757423875958170550}
+    m_Position: {x: 570, y: 60, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -1289835925079846819}
@@ -179,7 +179,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 170, y: 110, z: 0}
-  m_EntryPosition: {x: 420, y: 240, z: 0}
+  m_EntryPosition: {x: 280, y: 260, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 566059392848052537}
@@ -191,7 +191,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fire_anim
-  m_Speed: 1
+  m_Speed: 0.25
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []

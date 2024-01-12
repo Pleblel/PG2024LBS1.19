@@ -32,7 +32,7 @@ public class hitboxCheck : MonoBehaviour
             {
                 damage = 100;
             }
-            enemyComponent.TakeDamage(damage);
+            enemyComponent.damageCall(damage);
         }
 
     }
