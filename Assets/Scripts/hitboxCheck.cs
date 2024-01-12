@@ -19,10 +19,14 @@ public class hitboxCheck : MonoBehaviour
             if (spell.spells == 0)
             {
                 damage = 20;
+                Destroy(transform.parent.gameObject);
+                Destroy(gameObject);
             }
             if (spell.spells == 1)
             {
                 damage = 1;
+                Destroy(transform.parent.gameObject);
+                Destroy(gameObject);
             }
             if (spell.spells == 2)
             {

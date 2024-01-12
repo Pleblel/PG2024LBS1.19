@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8e0a29d54852a91418c668e5b77483d7
+guid: 525d70f4e2517ad42add4ef5d6c77dbf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,19 +69,6 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spell_water_1_0
+      name: Sprite-0004_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 110
-        width: 300
-        height: 110
+        y: 17
+        width: 47
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d84847ff61711c4f84596da60a1b519
-      internalID: 540742988
+      spriteID: 704ecdbfab4474043a1e5da91c4eaef5
+      internalID: -1646948169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spell_water_1_1
+      name: Sprite-0004_1
       rect:
         serializedVersion: 2
-        x: 300
-        y: 110
-        width: 300
-        height: 110
+        x: 47
+        y: 17
+        width: 47
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de4ca6bc1654d204ab381d21f8a0d5e5
-      internalID: 373195845
+      spriteID: 0bfe4020b599e064ab936182a1920a79
+      internalID: 776599563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spell_water_1_2
+      name: Sprite-0004_2
       rect:
         serializedVersion: 2
-        x: 600
-        y: 110
-        width: 300
-        height: 110
+        x: 94
+        y: 17
+        width: 47
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25c55877d38d53742a61117bc44fbdf7
-      internalID: 1921908153
+      spriteID: b037cae589d88f847a512c2dd9900819
+      internalID: 326063745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spell_water_1_3
+      name: Sprite-0004_3
       rect:
         serializedVersion: 2
-        x: 900
-        y: 110
-        width: 300
-        height: 110
+        x: 141
+        y: 17
+        width: 47
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c303e713c0504249ab78d3eb2a5a239
-      internalID: -1360991296
+      spriteID: a2321219c4db6f84bbe41ab766fc303f
+      internalID: -222127697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spell_water_1_4
+      name: Sprite-0004_4
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 110
-        width: 300
-        height: 110
+        x: 188
+        y: 17
+        width: 47
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90460d5044424164ab6aff08bf3b9182
-      internalID: -1053616544
+      spriteID: 31ae0b4c5d0ecaf4f8ca0ddc366ba8ea
+      internalID: 375776466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spell_water_1_5
+      name: Sprite-0004_5
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 110
-        width: 300
-        height: 110
+        x: 235
+        y: 17
+        width: 47
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06fa60d71919b654c958a784d53af822
-      internalID: 536400624
+      spriteID: d4b5ab31342a38c49974742100190312
+      internalID: -1666462977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spell_water_1_6
+      name: Sprite-0004_6
       rect:
         serializedVersion: 2
-        x: 1800
-        y: 110
-        width: 300
-        height: 110
+        x: 282
+        y: 17
+        width: 47
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c65c59a619e8d60429dd1e9629243e7f
-      internalID: 302410573
+      spriteID: 56ae8645faf6b2049b3c26224f929c5d
+      internalID: 80461239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spell_water_1_7
+      name: Sprite-0004_7
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 300
-        height: 110
+        width: 47
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c18c58b948644444ba51caa12ee9623
-      internalID: -1621652060
+      spriteID: 9957dfc5a7f11ee4aa758a9c8b65a0f1
+      internalID: 1945673085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spell_water_1_8
+      name: Sprite-0004_8
       rect:
         serializedVersion: 2
-        x: 300
+        x: 47
         y: 0
-        width: 300
-        height: 110
+        width: 47
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0b189b3f457595499f6b9244d0c8503
-      internalID: -1555017470
+      spriteID: 35329e4d82a7397419206a5ccd9eabbb
+      internalID: 1377224134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spell_water_1_9
+      name: Sprite-0004_9
       rect:
         serializedVersion: 2
-        x: 600
+        x: 94
         y: 0
-        width: 300
-        height: 110
+        width: 47
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,92 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87a7f07aca7ba0d46ab83105f09c85a2
-      internalID: -107730027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spell_water_1_10
-      rect:
-        serializedVersion: 2
-        x: 900
-        y: 0
-        width: 300
-        height: 110
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87ab8a525c68d4a4aa1a6d3be3628599
-      internalID: -1525414839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spell_water_1_11
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 0
-        width: 300
-        height: 110
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de13323d5bedddd46aa306f24626a1db
-      internalID: 1681662662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spell_water_1_12
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 0
-        width: 300
-        height: 110
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08c7994b0618fe6439db431163e4f005
-      internalID: 438654433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spell_water_1_13
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 0
-        width: 300
-        height: 110
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a24fa39e764a096468b4a1c342ea300f
-      internalID: -696072577
+      spriteID: f81ec2ce0ade7174aa11be417e2b3a7c
+      internalID: -698108882
       vertices: []
       indices: 
       edges: []
@@ -427,20 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spell_water_1_0: 540742988
-      Spell_water_1_1: 373195845
-      Spell_water_1_10: -1525414839
-      Spell_water_1_11: 1681662662
-      Spell_water_1_12: 438654433
-      Spell_water_1_13: -696072577
-      Spell_water_1_2: 1921908153
-      Spell_water_1_3: -1360991296
-      Spell_water_1_4: -1053616544
-      Spell_water_1_5: 536400624
-      Spell_water_1_6: 302410573
-      Spell_water_1_7: -1621652060
-      Spell_water_1_8: -1555017470
-      Spell_water_1_9: -107730027
+      Sprite-0004_0: -1646948169
+      Sprite-0004_1: 776599563
+      Sprite-0004_2: 326063745
+      Sprite-0004_3: -222127697
+      Sprite-0004_4: 375776466
+      Sprite-0004_5: -1666462977
+      Sprite-0004_6: 80461239
+      Sprite-0004_7: 1945673085
+      Sprite-0004_8: 1377224134
+      Sprite-0004_9: -698108882
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

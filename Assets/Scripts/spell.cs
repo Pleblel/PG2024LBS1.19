@@ -96,7 +96,7 @@ public class spell : MonoBehaviour
         Quaternion rotation = transform.rotation;
         var spellInstance = Instantiate(main, weap.transform.position, Quaternion.identity);
         var spellHitbox = Instantiate(hitbox4, weap.transform.position, Quaternion.identity);
-        spellInstance.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y + 6, 0);
+        spellInstance.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y + 5, 0);
         spellHitbox.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
         spellInstance.GetComponent<Animator>().Play("Lightning_anim");
         yield return new WaitForSecondsRealtime(1);
