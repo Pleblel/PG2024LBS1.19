@@ -6,7 +6,6 @@ public class EnemyScript : MonoBehaviour
 {
     [SerializeField]
     GameObject Player;
-    GameObject gameObject;
 
     private Vector2 vMove;
     public float mvmSpeedEnemy;
