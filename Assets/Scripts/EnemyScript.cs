@@ -24,18 +24,5 @@ public class EnemyScript : MonoBehaviour
         Vector2 dir = Player.transform.position - transform.position;
         Vector2 dirForce = dir.normalized * mvmSpeedEnemy;
         EnemyRigidBody.velocity = dirForce;
-        if (Mathf.Abs(dir.x) <= 0.7f || Mathf.Abs(dir.y) <= 0.7f)
-        {
-            EnemyAttack();
-        }
-    }
-
-    public void EnemyAttack()
-    {
-
-
-
-
-
     }
 }
