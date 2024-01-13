@@ -11,13 +11,11 @@ public class EnemyScript : MonoBehaviour
     public float mvmSpeedEnemy;
 
     Rigidbody2D EnemyRigidBody;
-    // Start is called before the first frame update
     void Start()
     {
         EnemyRigidBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         dir = Player.transform.position - transform.position;
