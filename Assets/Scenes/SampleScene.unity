@@ -965,12 +965,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3853462ab40134c9ac1e8c38fce0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMana: 100
+  maxMana: 150
   currentMana: 0
-  manaGain: 0.083333336
+  manaGain: 0.01
   manaPercentage: 0
   timeInMsSFX: 0
-  ManabarfullSFX: {fileID: 8300000, guid: 85c2b406a3b62854cb015030485f06d8, type: 3}
+  ManabarfullSFX: {fileID: 8300000, guid: 7bfb821c1cb8cd743b58a492994e206f, type: 3}
   ManaReminderVolume: 0.01
 --- !u!1 &780220412
 GameObject:
@@ -1012,8 +1012,14 @@ MonoBehaviour:
   rollingCooldown: 0.9
   RollingVolume: 0.7
   WalkingVolume: 0.6
-  SFXWalk: {fileID: 8300000, guid: e2dc3bc3a809f894eb4e1b145c1c8921, type: 3}
-  SFXDash: {fileID: 8300000, guid: fa66374fb05148249b1e7c9d7b9c6c59, type: 3}
+  SFXWalks:
+  - {fileID: 8300000, guid: 6156d2d6f5112bd4a86246c9be3cd960, type: 3}
+  - {fileID: 8300000, guid: ee929e753e536584fa0f6227f820d749, type: 3}
+  - {fileID: 8300000, guid: 62e8b1b92141dd645a0486c22db051a3, type: 3}
+  - {fileID: 8300000, guid: c5157c73c38635e409d9425cd555652f, type: 3}
+  - {fileID: 8300000, guid: 715c711f50da03e4f89531013c4b2d96, type: 3}
+  - {fileID: 8300000, guid: e242fc3b48bc1b24bb8aed234756a977, type: 3}
+  SFXDash: {fileID: 8300000, guid: 9b8c043e7aba4d047894ece9d82ec87b, type: 3}
 --- !u!70 &780220414
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using UnityEngine;
 
 public class playerMove : MonoBehaviour
@@ -16,8 +17,9 @@ public class playerMove : MonoBehaviour
     public float rollingCooldown;
     public float RollingVolume;
     public float WalkingVolume;
+    int counting = 0;
     [SerializeField]
-    private AudioClip SFXWalk; 
+    private AudioClip[] SFXWalks; 
     [SerializeField]
     private AudioClip SFXDash;
     void Update()
@@ -47,12 +49,20 @@ public class playerMove : MonoBehaviour
         }
         //Move player
         rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
-
+        
         //Walk run audio HERE!
         if (Mathf.Abs(rb.velocity.magnitude) > WalkingVolume)
         {
-            SoundFXManager.instance.PlayLoopingSFX(SFXWalk);
+            counting++;
+            if (counting == 10)
+            { 
+                //SoundFXManager.instance.PlayLoopingSFX(SFXWalk);
+                Debug.Log(SoundFXManager.instance);
+                SoundFXManager.instance.PlayRandomSoundFXclip(SFXWalks, transform, 1f);
+                counting = 0;
+            }
         }
+        
         
     }
 

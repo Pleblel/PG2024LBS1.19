@@ -10,7 +10,7 @@ public class manaScript : MonoBehaviour
     Image manaBarImage;
     public float maxMana = 100;
     public float currentMana;
-    public float manaGain = 1/12f;
+    public float manaGain;
     public float manaPercentage;
     public int timeInMsSFX;
     [SerializeField]
@@ -22,14 +22,14 @@ public class manaScript : MonoBehaviour
     void Start()
     {
         manaBarImage = gameObject.GetComponent<Image>();
-        currentMana = 80;
+        currentMana = 0;
     }
 
     void Update()
     {
         timer += Time.deltaTime;
 
-        manaGain = 1/12f;
+        
         currentMana += manaGain;
         if (currentMana > maxMana)
         {
