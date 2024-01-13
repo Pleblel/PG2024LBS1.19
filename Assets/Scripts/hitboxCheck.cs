@@ -12,6 +12,7 @@ public class hitboxCheck : MonoBehaviour
     {
         GameObject enemy = col.gameObject;
         enemyHP enemyComponent = enemy.GetComponent<enemyHP>();
+        wall wallComponent = enemy.GetComponent<wall>();
         weapon spell = weap.GetComponent<weapon>();
         Debug.Log(spell.spells);
         if (enemyComponent != null)
@@ -37,6 +38,11 @@ public class hitboxCheck : MonoBehaviour
                 damage = 100;
             }
             enemyComponent.damageCall(damage);
+        }
+        if (wallComponent != null)
+        {
+            Destroy(transform.parent.gameObject);
+            Destroy(gameObject);
         }
 
     }

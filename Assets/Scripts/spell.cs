@@ -26,6 +26,7 @@ public class spell : MonoBehaviour
     public float manaUse2;
     public float manaUse3;
     public float manaUse4;
+    public Animator ar;
     public void spellCast()
     {
         transform.rotation = rotation.transform.rotation;
@@ -53,6 +54,11 @@ public class spell : MonoBehaviour
             StartCoroutine(spell3());
         }
     }
+    private void Update()
+    {
+        ar.SetFloat("Horizontal", Camera.main.ScreenToWorldPoint(Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0)).x);
+        ar.SetFloat("Vertical", Camera.main.ScreenToWorldPoint(Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0)).y);
+    }
     IEnumerator spell0()
     {
         Quaternion rotation = transform.rotation;
@@ -61,7 +67,7 @@ public class spell : MonoBehaviour
         spellInstance.GetComponent<Animator>().Play("Water_anim");
         spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed1, 0));
         spellHitbox.transform.parent = spellInstance.transform;
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(5);
         Destroy(spellInstance);
         Destroy(spellHitbox);
     }
@@ -83,10 +89,8 @@ public class spell : MonoBehaviour
         var spellInstance = Instantiate(main, weap.transform.position, rotation);
         var spellHitbox = Instantiate(hitbox3, weap.transform.position, rotation);
         spellInstance.GetComponent<Animator>().Play("Stone_anim");
-        spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed1, 0));
+        spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed3, 0));
         spellHitbox.transform.parent = spellInstance.transform;
-        yield return new WaitForSecondsRealtime(1);
-        spellInstance.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         yield return new WaitForSecondsRealtime(10);
         Destroy(spellInstance);
         Destroy(spellHitbox);
