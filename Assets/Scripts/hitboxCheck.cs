@@ -5,7 +5,7 @@ using static Unity.Collections.AllocatorManager;
 
 public class hitboxCheck : MonoBehaviour
 {
-    float damage;
+    public float damage;
     public GameObject weap;
 
     void OnTriggerEnter2D(Collider2D col)
@@ -19,7 +19,7 @@ public class hitboxCheck : MonoBehaviour
         {
             if (spell.spells == 0)
             {
-                damage = 20;
+                damage = 80;
                 Destroy(transform.parent.gameObject);
                 Destroy(gameObject);
             }
@@ -31,11 +31,11 @@ public class hitboxCheck : MonoBehaviour
             }
             if (spell.spells == 2)
             {
-                damage = 30;
+                damage = 190;
             }
             if (spell.spells == 3)
             {
-                damage = 100;
+                damage = 150;
             }
             enemyComponent.damageCall(damage);
         }
