@@ -693,6 +693,7 @@ MonoBehaviour:
   player: {fileID: 780220412}
   camSpeed: 3
   maxDis: 3
+<<<<<<< HEAD
 --- !u!1 &520515429
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+=======
+>>>>>>> b7a8bc15da576554105233face4fedde3c999ec2
 --- !u!1 &541737414
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +851,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!61 &622254182
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -905,6 +909,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> b7a8bc15da576554105233face4fedde3c999ec2
 --- !u!1 &623320590
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,12 +925,20 @@ GameObject:
   - component: {fileID: 623320594}
   - component: {fileID: 743214046}
   m_Layer: 0
+<<<<<<< HEAD
   m_Name: 
+=======
+  m_Name: Weapon Controller
+>>>>>>> b7a8bc15da576554105233face4fedde3c999ec2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 0
+=======
+  m_IsActive: 1
+>>>>>>> b7a8bc15da576554105233face4fedde3c999ec2
 --- !u!4 &623320591
 Transform:
   m_ObjectHideFlags: 0
@@ -2809,6 +2823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weap: {fileID: 623320590}
+<<<<<<< HEAD
 --- !u!212 &458523424634030950
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2940,11 +2955,16 @@ MonoBehaviour:
   Player: {fileID: 780220412}
   dir: {x: 0, y: 0}
   mvmSpeedEnemy: 3.5
+=======
+>>>>>>> b7a8bc15da576554105233face4fedde3c999ec2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+<<<<<<< HEAD
   - {fileID: 520515437}
+=======
+>>>>>>> b7a8bc15da576554105233face4fedde3c999ec2
   - {fileID: 541737415}
   - {fileID: 519420032}
   - {fileID: 780220417}
@@ -2956,6 +2976,9 @@ SceneRoots:
   - {fileID: 1370343725}
   - {fileID: 1540423268}
   - {fileID: 694862185}
+<<<<<<< HEAD
   - {fileID: 1629446325}
+=======
+>>>>>>> b7a8bc15da576554105233face4fedde3c999ec2
   - {fileID: 314425966}
   - {fileID: 411674888}
