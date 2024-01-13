@@ -1112,6 +1112,9 @@ PrefabInstance:
       addedObject: {fileID: 1635018026}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4797869766425293080, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 694862199}
+    - targetCorrespondingSourceObject: {fileID: 4797869766425293080, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
       insertIndex: -1
       addedObject: {fileID: 694862188}
     - targetCorrespondingSourceObject: {fileID: 4797869766425293080, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
@@ -1239,6 +1242,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.09506926}
   m_Size: {x: 0.62682146, y: 1.3723643}
   m_Direction: 0
+--- !u!114 &694862199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694862186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244c808504a26a24eabdd2e2af6ef385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
 --- !u!1 &743214044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2934,7 +2950,6 @@ SceneRoots:
   - {fileID: 780220417}
   - {fileID: 926472486}
   - {fileID: 2140978829}
-  - {fileID: 2278545852522701689}
   - {fileID: 516070104}
   - {fileID: 2147483647}
   - {fileID: 2097159655}
