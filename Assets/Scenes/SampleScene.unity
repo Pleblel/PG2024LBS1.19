@@ -2212,6 +2212,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4374113535934272762, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 458523424416310274, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2959,3 +2963,4 @@ SceneRoots:
   - {fileID: 1629446325}
   - {fileID: 314425966}
   - {fileID: 411674888}
+  - {fileID: 2278545852522701689}
