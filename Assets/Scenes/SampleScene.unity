@@ -1106,7 +1106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4797869766425293080, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
       propertyPath: m_Name
-      value: EnemyEasy (1)
+      value: EnemyHard
       objectReference: {fileID: 0}
     - target: {fileID: 6682609143698488733, guid: 2717be0bf0a18a64d9aa0d4872885382, type: 3}
       propertyPath: Player
