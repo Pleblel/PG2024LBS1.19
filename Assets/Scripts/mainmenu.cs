@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class mainmenu : MonoBehaviour
 {
-    //starts the game if u press "play"
+    // Starts the game if u press "play"
     public void playGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        WaveControl.start = true;
     }
-    //makes the game close if u press "exit"
+    // Makes the game close if u press "exit"
     public void quitgame()
     {
         Debug.Log("Quit!");

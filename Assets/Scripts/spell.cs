@@ -54,11 +54,7 @@ public class spell : MonoBehaviour
             StartCoroutine(spell3());
         }
     }
-    private void Update()
-    {
-        ar.SetFloat("Horizontal", Camera.main.ScreenToWorldPoint(Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0)).x);
-        ar.SetFloat("Vertical", Camera.main.ScreenToWorldPoint(Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0)).y);
-    }
+    
     IEnumerator spell0()
     {
         Quaternion rotation = transform.rotation;

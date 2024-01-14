@@ -7,7 +7,7 @@ public class WaveControl : MonoBehaviour
 {
     [SerializeField] private float countdown;
 
-    public bool start;
+    public static bool start = false;
 
     [SerializeField] private GameObject spawnPoint;
 
@@ -22,13 +22,10 @@ public class WaveControl : MonoBehaviour
     {
         readyToCountDown = true;
 
-        if (start)
-        {
             for (int i = 0; i < waves.Length; i++)
             {
                 waves[i].enemiesLeft = waves[i].enemies.Length;
             }
-        }
     }
 
     // Update is called once per frame
@@ -67,7 +64,7 @@ public class WaveControl : MonoBehaviour
         {
             for (int i = 0; i < waves[currentWaveIndex].enemies.Length; i++)
             {
-
+                // ring johan first thing på måndag
                 enemyHP enemy = Instantiate(waves[currentWaveIndex].enemies[i], spawnPoint.transform);
 
                 enemy.transform.SetParent(spawnPoint.transform);
