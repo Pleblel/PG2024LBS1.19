@@ -28,8 +28,7 @@ public class manaScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-
-        
+        manaGain = 0.05f + 0.0007f * currentMana;
         currentMana += manaGain;
         if (currentMana > maxMana)
         {
