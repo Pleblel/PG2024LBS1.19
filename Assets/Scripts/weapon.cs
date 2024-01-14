@@ -56,7 +56,7 @@ public class weapon : MonoBehaviour
     }
     public void spell4Func()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim2 && spells == 3)
+        if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim4 && spells == 3)
         {
             spell multSpl = spell1.GetComponent<spell>();
             multSpl.spellCast();
