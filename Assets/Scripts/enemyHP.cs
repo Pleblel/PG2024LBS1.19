@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class enemyHP : MonoBehaviour
 {
+    private WaveControl waveSpawner;
+
     public float hp;
+
+    private void Start()
+    {
+        waveSpawner = GetComponentInParent<WaveControl>();
+    }
+
     public void damageCall(float damage)
     {
         StartCoroutine(TakeDamage(damage));
@@ -19,6 +27,8 @@ public class enemyHP : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(gameObject);
+
+            waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
         }
     }
 }

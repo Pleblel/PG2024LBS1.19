@@ -18,6 +18,11 @@ public class EnemyScript : MonoBehaviour
 
     void Update()
     {
+        if (gameObject.transform.position.x > 500)
+        {
+            return;
+        }
+
         dir = Player.transform.position - transform.position;
         Vector2 dirForce = dir.normalized * mvmSpeedEnemy;
         EnemyRigidBody.velocity = dirForce;
