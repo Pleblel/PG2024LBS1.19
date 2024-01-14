@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
 
     public int MaxHealth = 100;
-    int currenthealth;
+    public int currenthealth;
 
 
     public HealthBar healthbar;
@@ -25,21 +25,11 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(20);
         }
     }
-
-    // Call this method to apply damage to the attached gameObject
     public void TakeDamage(int damage)
     {
         currenthealth -= damage;
+
         healthbar.SetHealth(currenthealth);
-
-        PlayerDeath();
-    }
-
-    void PlayerDeath()
-    {
-        //Kill animation of some sort
-
-        //Disable the player.
     }
 }
 

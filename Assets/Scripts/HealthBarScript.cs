@@ -16,8 +16,6 @@ public class HealthBar : MonoBehaviour
         slider.value = health;
 
     }
-
-    // This method is called to set the health to a specific value
    public void SetHealth(int health)
     {
         slider.value = health;
