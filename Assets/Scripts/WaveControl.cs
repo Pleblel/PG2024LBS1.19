@@ -22,27 +22,30 @@ public class WaveControl : MonoBehaviour
     {
         readyToCountDown = true;
 
-        for (int i = 0; i < waves.Length; i++)
+        if (start)
         {
-            waves[i].enemiesLeft = waves[i].enemies.Length;
+            for (int i = 0; i < waves.Length; i++)
+            {
+                waves[i].enemiesLeft = waves[i].enemies.Length;
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentWaveIndex >= waves.Length)
+        if (currentWaveIndex >= waves.Length && start)
         {
             Debug.Log("You survived every wave!");
             return;
         }
 
-        if (readyToCountDown == true)
+        if (readyToCountDown == true && start)
         {
             countdown -= Time.deltaTime;
         }
 
-        if (countdown <= 0)
+        if (countdown <= 0 && start)
         {
             readyToCountDown = false;
 
@@ -51,7 +54,7 @@ public class WaveControl : MonoBehaviour
             StartCoroutine(SpawnWave());
         }
 
-        if (waves[currentWaveIndex].enemiesLeft == 0)
+        if (waves[currentWaveIndex].enemiesLeft == 0 && start)
         {
             readyToCountDown = true;
             currentWaveIndex++;
