@@ -73,6 +73,10 @@ public class playerMove : MonoBehaviour
         isRolling = false;
         yield return new WaitForSeconds(rollingCooldown);
         canRoll = true;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         //DASH AUDIO HERE!
         SoundFXManager.instance.PlaySoundFXclip(SFXDash, transform, RollingVolume);
     }
