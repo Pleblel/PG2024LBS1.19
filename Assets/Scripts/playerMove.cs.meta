@@ -3,9 +3,7 @@ guid: 30a668b5c8496024d9a647d52feab620
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - rb: {instanceID: 0}
-  - SFXDash: {fileID: 8300000, guid: 2b678994436b38348a91b11e2ee99e50, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
