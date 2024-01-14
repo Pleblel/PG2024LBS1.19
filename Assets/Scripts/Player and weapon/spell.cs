@@ -27,6 +27,7 @@ public class spell : MonoBehaviour
     public float manaUse3;
     public float manaUse4;
     public Animator ar;
+    [SerializeField] private AudioClip waterSpellSFX;
     public void spellCast()
     {
         transform.rotation = rotation.transform.rotation;
@@ -61,6 +62,11 @@ public class spell : MonoBehaviour
         var spellInstance = Instantiate(main, weap.transform.position, rotation);
         var spellHitbox = Instantiate(hitbox1, weap.transform.position, rotation);
         spellInstance.GetComponent<Animator>().Play("Water_anim");
+
+        //plays Water Audio
+        SoundFXManager.instance.PlaySoundFXclip(waterSpellSFX, transform, 1f);
+
+
         spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed1, 0));
         spellHitbox.transform.parent = spellInstance.transform;
         yield return new WaitForSecondsRealtime(5);
