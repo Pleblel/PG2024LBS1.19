@@ -19,7 +19,7 @@ public class manaScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        manaGain = 1/12f;
+        manaGain = 0.05f + 0.0007f * currentMana;
         currentMana += manaGain;
         if (currentMana > maxMana)
         {
