@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
 
     public int MaxHealth = 100;
-    int currenthealth;
+    float currenthealth;
 
 
     public HealthBar healthbar;
@@ -20,10 +20,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            TakeDamage(20);
-        }
+        currenthealth += Time.deltaTime / 100;
     }
 
     // Call this method to apply damage to the attached gameObject
