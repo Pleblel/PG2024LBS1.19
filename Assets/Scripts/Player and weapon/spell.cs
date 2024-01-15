@@ -28,6 +28,8 @@ public class spell : MonoBehaviour
     public float manaUse4;
     public Animator ar;
     [SerializeField] private AudioClip waterSpellSFX;
+    [SerializeField] private AudioClip boulderSFX;
+    [SerializeField] private AudioClip lightningSFX;
     public void spellCast()
     {
         transform.rotation = rotation.transform.rotation;
@@ -56,6 +58,7 @@ public class spell : MonoBehaviour
         }
     }
     
+    //Activates spell water
     IEnumerator spell0()
     {
         Quaternion rotation = transform.rotation;
@@ -73,30 +76,41 @@ public class spell : MonoBehaviour
         Destroy(spellInstance);
         Destroy(spellHitbox);
     }
+
+    //Activates spell fire
     IEnumerator spell1()
     {
         Quaternion rotation = transform.rotation * Quaternion.Euler(0, 0, Random.Range(-30, 30));
         var spellInstance = Instantiate(main, weap.transform.position, rotation);
         var spellHitbox = Instantiate(hitbox2, weap.transform.position, rotation);
         spellInstance.GetComponent<Animator>().Play("Fire_anim");
+
         spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed2, 0));
         spellHitbox.transform.parent = spellInstance.transform;
         yield return new WaitForSecondsRealtime(1);
         Destroy(spellInstance);
         Destroy(spellHitbox);
     }
+
+    //activates spell boulder
     IEnumerator spell2()
     {
         Quaternion rotation = transform.rotation;
         var spellInstance = Instantiate(main, weap.transform.position, rotation);
         var spellHitbox = Instantiate(hitbox3, weap.transform.position, rotation);
         spellInstance.GetComponent<Animator>().Play("Stone_anim");
+
+        //play sound FX for boulder
+        SoundFXManager.instance.PlaySoundFXclip(boulderSFX, transform, 1f);
+
         spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed3, 0));
         spellHitbox.transform.parent = spellInstance.transform;
         yield return new WaitForSecondsRealtime(10);
         Destroy(spellInstance);
         Destroy(spellHitbox);
     }
+
+    //activates spell lightning
     IEnumerator spell3()
     {
         Quaternion rotation = transform.rotation;
@@ -105,6 +119,10 @@ public class spell : MonoBehaviour
         spellInstance.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y + 5, 0);
         spellHitbox.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
         spellInstance.GetComponent<Animator>().Play("Lightning_anim");
+
+        //play sound FX for Lightning
+        SoundFXManager.instance.PlaySoundFXclip(lightningSFX, transform, 1f);
+
         yield return new WaitForSecondsRealtime(1);
         Destroy(spellInstance);
         Destroy(spellHitbox);
