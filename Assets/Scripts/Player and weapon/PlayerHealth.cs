@@ -20,10 +20,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            TakeDamage(20);
-        }
+     
     }
 
     // Call this method to apply damage to the attached gameObject
