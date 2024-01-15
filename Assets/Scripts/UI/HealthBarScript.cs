@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
 
     //kod som gör att healthbaren rör på sig baserat på ditt nuvarande HP
-    public void SetMaxHealth(int health)
+    public void SetMaxHealth(float health)
     {
         slider.maxValue = health;
         slider.value = health;
@@ -18,7 +18,7 @@ public class HealthBar : MonoBehaviour
     }
 
     // This method is called to set the health to a specific value
-   public void SetHealth(int health)
+   public void SetHealth(float health)
     {
         slider.value = health;
     }

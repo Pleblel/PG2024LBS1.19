@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class weaponController : MonoBehaviour
 {
+    public SpriteRenderer playerSprite;
     public SpriteRenderer sr;
     public GameObject player;
     public GameObject hand;
@@ -13,10 +14,12 @@ public class weaponController : MonoBehaviour
         if (pos.x >= 0.5f)
         {
             sr.flipY = false;
+            playerSprite.flipX = false;
         }
         else
         {
             sr.flipY = true;
+            playerSprite.flipX = true;
         }   
     }
 }
