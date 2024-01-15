@@ -1776,6 +1776,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: mainmenu, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1986979971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1925,7 +1937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 705, y: -105}
+  m_AnchoredPosition: {x: 678.04, y: -210}
   m_SizeDelta: {x: 658.4496, y: 594.7665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2005882164
@@ -1940,6 +1952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8f6cdc5f8a645438b3d707d1921f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickSFX: {fileID: 0}
 --- !u!1 &2097849962
 GameObject:
   m_ObjectHideFlags: 0
