@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class playerMove : MonoBehaviour
 {
@@ -22,6 +23,15 @@ public class playerMove : MonoBehaviour
     private AudioClip[] SFXWalks;
     [SerializeField]
     private AudioClip SFXDash;
+    SpriteRenderer sr;
+    Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
+    }
+
     void Update()
     {
         //Check roll
@@ -29,11 +39,13 @@ public class playerMove : MonoBehaviour
         {
             return;
         }
+
         //looks for input
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
         //sets direction for movement
         moveDir = new Vector2(moveX, moveY).normalized;
+
         if (Input.GetButtonDown("Jump") && canRoll)
         {
             StartCoroutine(Roll());
@@ -61,6 +73,8 @@ public class playerMove : MonoBehaviour
                 counting = 0;
             }
         }
+
+        animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.magnitude));
     }
 
     IEnumerator Roll()
