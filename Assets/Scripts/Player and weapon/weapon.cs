@@ -15,6 +15,8 @@ public class weapon : MonoBehaviour
     public float cooldownLim3;
     public float cooldownLim4;
     public int spells;
+    float counting;
+    [SerializeField] private AudioClip fireSpellSFX;
     void Update()
     {
         cooldown += 1 * Time.deltaTime;
@@ -27,6 +29,8 @@ public class weapon : MonoBehaviour
         }
         spellSwap();
     }
+
+    //Shoots Water Spell
     public void spell1Func()
     {
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim1 && spells == 0)
@@ -36,15 +40,26 @@ public class weapon : MonoBehaviour
             cooldown = 0;
         }
     }
+
+    //Shoots Fire Spell
     public void spell2Func()
     {
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim2 && spells == 1)
         {
+            counting++;
+            if (counting == 50)
+            {
+                SoundFXManager.instance.PlaySoundFXclip(fireSpellSFX, transform, 1f);
+                counting = 0;
+            }
+
             spell multSpl = spell1.GetComponent<spell>();
             multSpl.spellCast();
             cooldown = 0;
         }
     }
+
+    //shoots Stone Bumling
     public void spell3Func()
     {
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim3 && spells == 2)
@@ -54,6 +69,8 @@ public class weapon : MonoBehaviour
             cooldown = 0;
         }
     }
+
+    //ligning funder
     public void spell4Func()
     {
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim4 && spells == 3)

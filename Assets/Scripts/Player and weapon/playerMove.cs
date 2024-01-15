@@ -69,11 +69,15 @@ public class playerMove : MonoBehaviour
         canRoll = false;
         isRolling = true;
         rb.velocity += new Vector2(moveDir.x * rollingSpeed, moveDir.y * rollingSpeed );
+
+        //DASH AUDIO HERE!
+        SoundFXManager.instance.PlaySoundFXclip(SFXDash, transform, RollingVolume);
+
+        //Starts Cooldown
         yield return new WaitForSeconds(rollingTime);
         isRolling = false;
         yield return new WaitForSeconds(rollingCooldown);
         canRoll = true;
-        //DASH AUDIO HERE!
-        SoundFXManager.instance.PlaySoundFXclip(SFXDash, transform, RollingVolume);
+        
     }
 }
