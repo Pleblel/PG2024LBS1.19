@@ -12,7 +12,7 @@ public class mainmenu : MonoBehaviour
 
         WaveControl.start = true;
     }
-    // Makes the game close if u press "exit"
+    // Makes the game close if u press "quit"
     public void quitgame()
     {
         Debug.Log("Quit!");
