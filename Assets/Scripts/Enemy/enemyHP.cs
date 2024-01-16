@@ -10,7 +10,7 @@ public class enemyHP : MonoBehaviour
 
     private void Start()
     {
-        waveSpawner = GetComponentInParent<WaveControl>();
+        waveSpawner = FindObjectOfType<WaveControl>();
     }
 
     public void damageCall(float damage)
@@ -27,8 +27,7 @@ public class enemyHP : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(gameObject);
-
-            waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
+            waveSpawner.OnEnemyDeath();
         }
     }
 }

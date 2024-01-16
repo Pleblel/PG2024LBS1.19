@@ -47,6 +47,35 @@ public class WaveControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        countdown2 += Time.deltaTime;
+
+        // After 0.2 seconds have passed:
+        if (countdown2 >= 0.2f || playOnce)
+        {
+            int randomInt1 = Random.Range(0, 3);
+
+            if (randomInt1 == 0)
+            {
+                pos = pos1;
+            }
+            else if (randomInt1 == 1)
+            {
+                pos = pos2;
+            }
+            else if (randomInt1 == 2)
+            {
+                pos = pos3;
+            }
+            else if (randomInt1 == 3)
+            {
+                pos = pos4;
+            }
+
+            rand = pos + Random.insideUnitCircle * Radius;
+            countdown2 = 0;
+            playOnce = false;
+        }
+
         if (currentWaveIndex >= waves.Length && start)
         {
             Debug.Log("You survived every wave!");
@@ -72,35 +101,6 @@ public class WaveControl : MonoBehaviour
             readyToCountDown = true;
             currentWaveIndex++;
         }
-
-        countdown2 += Time.deltaTime;
-
-        // After 0.2 seconds have passed:
-        if (countdown2 >= 1 || playOnce)
-        {
-            int randomInt1 = Random.Range(0, 3);
-
-            if (randomInt1 == 0)
-            {
-                pos = pos1;
-            }
-            else if (randomInt1 == 1)
-            {
-                pos = pos2;
-            }
-            else if (randomInt1 == 2)
-            {
-                pos = pos3;
-            }
-            else if (randomInt1 == 3)
-            {
-                pos = pos4;
-            }
-
-            rand = pos + Random.insideUnitCircle * Radius;
-            countdown2 = 0;
-            playOnce = false;
-        }
     }
 
     private IEnumerator SpawnWave()
@@ -111,12 +111,17 @@ public class WaveControl : MonoBehaviour
             {
                 // ring johan first thing på måndag
                 enemyHP enemy = Instantiate(waves[currentWaveIndex].enemies[i], new Vector3 (rand.x, rand.y, 0), Quaternion.identity, EnemyParent);
-
                 enemy.transform.SetParent(spawnPoint.transform);
 
                 yield return new WaitForSeconds(waves[currentWaveIndex].timeToNextEnemy);
             }
         }
+    }
+
+
+    public void OnEnemyDeath()
+    {
+        waves[currentWaveIndex].enemiesLeft--;
     }
 }
 
