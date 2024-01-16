@@ -29,8 +29,10 @@ public class playerMove : MonoBehaviour
 
     private void Start()
     {
-        //tar animator och sprite renderer
+        // Gets Animator component of gameObject and stores it. - Elm
         animator = GetComponent<Animator>();
+
+        //tar sprite renderer
         sr = gameObject.GetComponent<SpriteRenderer>();
     }
 
@@ -76,6 +78,7 @@ public class playerMove : MonoBehaviour
             }
         }
 
+        // Updates "xVelocity" variable in the Animator depending on Velocity of Player. - Elm
         animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.magnitude));
     }
 

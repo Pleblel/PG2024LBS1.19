@@ -95,7 +95,7 @@ public class spell : MonoBehaviour
         Destroy(spellHitbox);
     }
 
-    //äld
+    //eld
     IEnumerator spell1()
     {
         //sätter rikting, spawnar hitbox och visuals 

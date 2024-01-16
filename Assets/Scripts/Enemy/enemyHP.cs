@@ -34,6 +34,8 @@ public class enemyHP : MonoBehaviour
         {
             Instantiate(gore, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
+
+            // Tells WaveControl script to remove 1 from the waves[currentWaveIndex].enemiesLeft. - Elm
             waveSpawner.OnEnemyDeath();
         }
     }

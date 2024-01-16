@@ -21,7 +21,7 @@ public class Enemycontroller : MonoBehaviour
         // Finds player position relative to the gameObject - Elm
         Vector2 pos = playerCont.transform.position - gameObject.transform.position;
 
-        // Flips the sprite of the gameObject depending on whether the player is to the left or right. - Elm
+        // Flip the sprite depending on whether the enemy is to the left or right of the Player. - Elm (med kodhjälp från Pelle)
         if (pos.x > 0)
         {
             sr.flipX = false;

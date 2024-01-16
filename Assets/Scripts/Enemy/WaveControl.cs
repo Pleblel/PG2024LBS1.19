@@ -36,8 +36,10 @@ public class WaveControl : MonoBehaviour
     // Start is called once
     private void Start()
     {
+        // Starts the countdown to the next wave. 0 by default, so wave 1 starts immediately. - Elm
         readyToCountDown = true;
 
+            // 
             for (int i = 0; i < waves.Length; i++)
             {
                 waves[i].enemiesLeft = waves[i].enemies.Length;
@@ -49,9 +51,10 @@ public class WaveControl : MonoBehaviour
     {
         countdown2 += Time.deltaTime;
 
-        // After 0.2 seconds have passed:
+        // After 0.2 seconds have passed or the script starts for the first time: Updates position of the spawnpoint for enemies. - Elm
         if (countdown2 >= 0.2f || playOnce)
         {
+            // Updates variable "pos" (Spawn position of enemy) randomly between pos1 - pos4 with Random.Range() method. - Elm
             int randomInt1 = Random.Range(0, 3);
 
             if (randomInt1 == 0)
@@ -71,22 +74,28 @@ public class WaveControl : MonoBehaviour
                 pos = pos4;
             }
 
+            // Creates a random position inside a UnitCircle at the coordinates of "pos". - Elm
             rand = pos + Random.insideUnitCircle * Radius;
+
+            // Resets timer and start variable from menu scene. - Elm
             countdown2 = 0;
             playOnce = false;
         }
 
+        // Used to signify the end of the last wave. Also stops the WaveSpawner from functioning further. - Elm
         if (currentWaveIndex >= waves.Length && start)
         {
             Debug.Log("You survived every wave!");
             return;
         }
 
+        // Counts down every second when the wavespawner script starts. - Elm
         if (readyToCountDown == true && start)
         {
             countdown -= Time.deltaTime;
         }
 
+        // Stops the countdown and resets it to the time between this wave and the next. Starts the next wave. - Elm
         if (countdown <= 0 && start)
         {
             readyToCountDown = false;
@@ -96,6 +105,7 @@ public class WaveControl : MonoBehaviour
             StartCoroutine(SpawnWave());
         }
 
+        // If all the enemies have died, restarts the process again. - Elm
         if (waves[currentWaveIndex].enemiesLeft == 0 && start)
         {
             readyToCountDown = true;
@@ -103,24 +113,28 @@ public class WaveControl : MonoBehaviour
         }
     }
 
+    // Spawns enemies based on the currentWaveIndex. - Elm
     private IEnumerator SpawnWave()
     {
+        // Stops if it is the last wave. - Elm
         if (currentWaveIndex < waves.Length)
         {
+            // Clones for the amount of enemies inside the specified Wave. - Elm
             for (int i = 0; i < waves[currentWaveIndex].enemies.Length; i++)
             {
-                // ring johan first thing på måndag
+                // Clones already existing (offscreen) enemies with updated positions and parents. - Elm
                 enemyHP enemy = Instantiate(waves[currentWaveIndex].enemies[i], new Vector3 (rand.x, rand.y, 0), Quaternion.identity, EnemyParent);
-                enemy.transform.SetParent(spawnPoint.transform);
 
+                // Waits for 0.2 seconds. - Elm
                 yield return new WaitForSeconds(waves[currentWaveIndex].timeToNextEnemy);
             }
         }
     }
 
-
+    // Called when an enemy dies. - Elm
     public void OnEnemyDeath()
     {
+        // On enemy death, 1 is removed from the .enemiesLeft variable. - Elm
         waves[currentWaveIndex].enemiesLeft--;
     }
 }
@@ -128,7 +142,9 @@ public class WaveControl : MonoBehaviour
 [System.Serializable]
 public class Wave
 {
+    // Array of specified enemies that contain the enemyHP script. - Elm
     public enemyHP[] enemies;
+
     public float timeToNextWave;
     public float timeToNextEnemy;
     [HideInInspector] public int enemiesLeft;

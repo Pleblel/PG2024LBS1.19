@@ -18,22 +18,26 @@ public class manaScript : MonoBehaviour
     void Start()
     {
         manaBarImage = gameObject.GetComponent<Image>();
-        currentMana = 35;
+        currentMana = 100;
     }
 
-    void FixedUpdate()
+    private void Update()
     {
+        // Formula for manaGain. - Elm & Pelle
         manaGain = 0.05f + 0.0007f * currentMana;
+
+        // Continuously adds mana. Stops if mana exceeds max. - Elm
         currentMana += manaGain;
         if (currentMana > maxMana)
         {
             currentMana = maxMana;
         }
 
-
+        // Calls to update the manabar meter - Elm
         UpdateManaBar();
     }
 
+    // Removes mana based on parameter. - Elm & Pelle
     public void UseMana(float manaUsed)
     {
         currentMana -= manaUsed;
@@ -41,7 +45,7 @@ public class manaScript : MonoBehaviour
         UpdateManaBar();
     }
 
-    // Update is called once per frame
+    // Updates the manabar when the currentMana variable changes.
     private void UpdateManaBar()
     {
         manaPercentage = currentMana / maxMana;
