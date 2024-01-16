@@ -7897,7 +7897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 300
-  gore: {fileID: 436526179}
+  gore: {fileID: 0}
 --- !u!114 &694862200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13010,7 +13010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 150
-  gore: {fileID: 436526179}
+  gore: {fileID: 0}
 --- !u!114 &1629446336
 MonoBehaviour:
   m_ObjectHideFlags: 0

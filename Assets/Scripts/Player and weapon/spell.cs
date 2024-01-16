@@ -8,6 +8,7 @@ using UnityEngine.XR;
 
 public class spell : MonoBehaviour
 {
+    //Pelle
     public Rigidbody2D rb;
     public float mSpeed1;
     public float mSpeed2;

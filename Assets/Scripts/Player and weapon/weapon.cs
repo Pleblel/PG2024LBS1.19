@@ -7,6 +7,7 @@ using static UnityEditor.FilePathAttribute;
 
 public class weapon : MonoBehaviour
 {
+    //Pelle
     public GameObject spell1;
     public GameObject weapHand;
     float cooldown = 0;

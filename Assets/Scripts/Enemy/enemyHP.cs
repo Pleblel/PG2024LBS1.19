@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyHP : MonoBehaviour
 {
+    //Pelle
     private WaveControl waveSpawner;
     public float hp;
     public GameObject gore;
@@ -13,7 +14,6 @@ public class enemyHP : MonoBehaviour
         waveSpawner = FindObjectOfType<WaveControl>();
     }
 
-    //Pelle
     //Startar dmg funktion
     public void damageCall(float damage)
     {

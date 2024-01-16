@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class cameraControl : MonoBehaviour
 {
+    //Pelle
     public GameObject player;
 
     Vector3 camPos;

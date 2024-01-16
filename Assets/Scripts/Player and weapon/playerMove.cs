@@ -7,6 +7,7 @@ using static UnityEditor.PlayerSettings;
 
 public class playerMove : MonoBehaviour
 {
+    //Pelle
     public Rigidbody2D rb;
     public float moveSpeed;
     private Vector2 moveDir;

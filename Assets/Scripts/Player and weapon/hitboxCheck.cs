@@ -5,6 +5,8 @@ using static Unity.Collections.AllocatorManager;
 
 public class hitboxCheck : MonoBehaviour
 {
+
+    //Pelle
     public float damage;
     public GameObject weap;
 
@@ -12,13 +14,10 @@ public class hitboxCheck : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         GameObject enemy = col.gameObject;
-        //tar fiende
         enemyHP enemyComponent = enemy.GetComponent<enemyHP>();
-        //tar vägg
         wall wallComponent = enemy.GetComponent<wall>();
-        //tar vilken spell det är
         weapon spell = weap.GetComponent<weapon>();
-        //kollar om det är en fiende
+        Debug.Log(spell.spells);
         if (enemyComponent != null)
         {
             if (spell.spells == 0)
@@ -47,7 +46,6 @@ public class hitboxCheck : MonoBehaviour
             }
             enemyComponent.damageCall(damage);
         }
-        //kollar om den spell träffar vägg
         if (wallComponent != null)
         {
             Destroy(transform.parent.gameObject);

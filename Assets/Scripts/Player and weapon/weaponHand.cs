@@ -5,6 +5,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class weaponHand : MonoBehaviour
 {
+    //Pelle
     public GameObject player;
     void Update()
     {
