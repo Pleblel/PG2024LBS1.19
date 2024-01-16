@@ -11,7 +11,7 @@ public class playerMove : MonoBehaviour
     public Rigidbody2D rb;
     public float moveSpeed;
     private Vector2 moveDir;
-
+    public GameObject dust;
     private bool canRoll = true;
     private bool isRolling = false;
     public float rollingSpeed;
