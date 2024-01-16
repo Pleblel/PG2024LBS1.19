@@ -72,7 +72,7 @@ public class spell : MonoBehaviour
 
         spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed1, 0));
         spellHitbox.transform.parent = spellInstance.transform;
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSeconds(5);
         Destroy(spellInstance);
         Destroy(spellHitbox);
     }
@@ -87,7 +87,7 @@ public class spell : MonoBehaviour
 
         spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed2, 0));
         spellHitbox.transform.parent = spellInstance.transform;
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSeconds(1);
         Destroy(spellInstance);
         Destroy(spellHitbox);
     }
@@ -105,7 +105,7 @@ public class spell : MonoBehaviour
 
         spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed3, 0));
         spellHitbox.transform.parent = spellInstance.transform;
-        yield return new WaitForSecondsRealtime(10);
+        yield return new WaitForSeconds(10);
         Destroy(spellInstance);
         Destroy(spellHitbox);
     }
@@ -123,7 +123,7 @@ public class spell : MonoBehaviour
         //play sound FX for Lightning
         SoundFXManager.instance.PlaySoundFXclip(lightningSFX, transform, 1f);
 
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSeconds(1);
         Destroy(spellInstance);
         Destroy(spellHitbox);
     }
