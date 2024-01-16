@@ -15,7 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void SetSoundFXVolume(float level)
     {
-       // audioMixer.SetFloat("SFXVolume", level);
+        //audioMixer.SetFloat("SFXVolume", level);
         audioMixer.SetFloat("SFXVolume", Mathf.Log10(level) * 20);
     }
 
