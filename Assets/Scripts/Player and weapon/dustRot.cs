@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class dustRot : MonoBehaviour
 {
-
+    //Pelle
     void Update()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
