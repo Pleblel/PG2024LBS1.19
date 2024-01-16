@@ -47,32 +47,6 @@ public class WaveControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentWaveIndex >= waves.Length && start)
-        {
-            Debug.Log("You survived every wave!");
-            return;
-        }
-
-        if (readyToCountDown == true && start)
-        {
-            countdown -= Time.deltaTime;
-        }
-
-        if (countdown <= 0 && start)
-        {
-            readyToCountDown = false;
-
-            countdown = waves[currentWaveIndex].timeToNextWave;
-
-            StartCoroutine(SpawnWave());
-        }
-
-        if (waves[currentWaveIndex].enemiesLeft == 0 && start)
-        {
-            readyToCountDown = true;
-            currentWaveIndex++;
-        }
-
         countdown2 += Time.deltaTime;
 
         // After 0.2 seconds have passed:
@@ -100,6 +74,32 @@ public class WaveControl : MonoBehaviour
             rand = pos + Random.insideUnitCircle * Radius;
             countdown2 = 0;
             playOnce = false;
+        }
+
+        if (currentWaveIndex >= waves.Length && start)
+        {
+            Debug.Log("You survived every wave!");
+            return;
+        }
+
+        if (readyToCountDown == true && start)
+        {
+            countdown -= Time.deltaTime;
+        }
+
+        if (countdown <= 0 && start)
+        {
+            readyToCountDown = false;
+
+            countdown = waves[currentWaveIndex].timeToNextWave;
+
+            StartCoroutine(SpawnWave());
+        }
+
+        if (waves[currentWaveIndex].enemiesLeft == 0 && start)
+        {
+            readyToCountDown = true;
+            currentWaveIndex++;
         }
     }
 
