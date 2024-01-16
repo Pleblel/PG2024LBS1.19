@@ -10,7 +10,10 @@ public class weaponController : MonoBehaviour
     public GameObject hand;
     void Update()
     {
+        // kollar om mus är höger eller vänster
         Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+
+        //byter sida på boken
         if (pos.x >= 0.5f)
         {
             sr.flipY = false;
