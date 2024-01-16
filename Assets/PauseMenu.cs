@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
+    
 
     // Checks if the game is getting paused by pressing "Escape"
     void Update()
@@ -19,9 +20,16 @@ public class PauseMenu : MonoBehaviour
             {
                 Resume();
             }
-            else {
+            else
+            { 
+            
                 Pause();
             }
+           
+        }
+        if(GameIsPaused = true && Input.GetKeyDown(KeyCode.Escape))
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
         }
     }
     //makes the game resume
@@ -43,4 +51,6 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    
 }
