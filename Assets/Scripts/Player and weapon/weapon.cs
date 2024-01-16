@@ -19,7 +19,10 @@ public class weapon : MonoBehaviour
     [SerializeField] private AudioClip fireSpellSFX;
     void Update()
     {
+        //cooldown för spell
         cooldown += 1 * Time.deltaTime;
+        
+        //aktiverar spellkoderna
         if (Input.GetKey(KeyCode.Mouse0))
         {
             spell1Func();
@@ -27,59 +30,72 @@ public class weapon : MonoBehaviour
             spell3Func();
             spell4Func();
         }
+
+        //aktiverar funktinen som kollar om man byter spell
         spellSwap();
     }
 
-    //Shoots Water Spell
+    //vatten
     public void spell1Func()
     {
+        //kollar om man klickar, inte är på cooldown och om det är den man vill använda
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim1 && spells == 0)
         {
+            //sätter cooldwon till 0 och säger till att vatten ska sjutas
             spell multSpl = spell1.GetComponent<spell>();
             multSpl.spellCast();
             cooldown = 0;
         }
     }
 
-    //Shoots Fire Spell
+    //äld
     public void spell2Func()
     {
+        //kollar om man klickar, inte är på cooldown och om det är den man vill använda
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim2 && spells == 1)
         {
+            //kod för att spela äld fx
             counting++;
             if (counting == 50)
             {
                 SoundFXManager.instance.PlaySoundFXclip(fireSpellSFX, transform, 1f);
                 counting = 0;
             }
-
+            
+            //sätter cooldwon till 0 och säger till att äld ska sjutas
             spell multSpl = spell1.GetComponent<spell>();
             multSpl.spellCast();
             cooldown = 0;
         }
     }
 
-    //shoots Stone Bumling
+    //sten
     public void spell3Func()
     {
+        //kollar om man klickar, inte är på cooldown och om det är den man vill använda
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim3 && spells == 2)
         {
+            //sätter cooldwon till 0 och säger till att sten ska sjutas
             spell multSpl = spell1.GetComponent<spell>();
             multSpl.spellCast();
             cooldown = 0;
         }
     }
 
-    //ligning funder
+    //blixt
     public void spell4Func()
     {
+        //kollar om man klickar, inte är på cooldown och om det är den man vill använda
         if (Input.GetKey(KeyCode.Mouse0) && cooldown >= cooldownLim4 && spells == 3)
         {
+            //sätter cooldwon till 0 och säger till att blixt ska sjutas
             spell multSpl = spell1.GetComponent<spell>();
             multSpl.spellCast();
             cooldown = 0;
         }
     }
+
+    //byta spell
     public void spellSwap()
     {
         if (Input.GetKeyDown(KeyCode.F))

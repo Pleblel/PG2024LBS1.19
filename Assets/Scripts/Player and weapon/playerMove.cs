@@ -28,22 +28,23 @@ public class playerMove : MonoBehaviour
 
     private void Start()
     {
+        //tar animator och sprite renderer
         animator = GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        //Check roll
+        //kollar om man rullar
         if (isRolling)
         {
             return;
         }
 
-        //looks for input
+        //kollar om man klickar wasd
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-        //sets direction for movement
+        //sätter rikting
         moveDir = new Vector2(moveX, moveY).normalized;
 
         if (Input.GetButtonDown("Jump") && canRoll)
@@ -54,12 +55,12 @@ public class playerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Check roll
+        //kollar om man rullar
         if (isRolling)
         {
             return;
         }
-        //Move player
+        //flyttar spelaren
         rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
 
         //Walk run audio HERE!
@@ -79,7 +80,7 @@ public class playerMove : MonoBehaviour
 
     IEnumerator Roll()
     {
-        //code for dash
+        //flyttar spelaren och säger att man rullar
         canRoll = false;
         isRolling = true;
         rb.velocity += new Vector2(moveDir.x * rollingSpeed, moveDir.y * rollingSpeed );
@@ -87,7 +88,7 @@ public class playerMove : MonoBehaviour
         //DASH AUDIO HERE!
         SoundFXManager.instance.PlaySoundFXclip(SFXDash, transform, RollingVolume);
 
-        //Starts Cooldown
+        //startar cooldown och säger att man inte rullar
         yield return new WaitForSeconds(rollingTime);
         isRolling = false;
         yield return new WaitForSeconds(rollingCooldown);

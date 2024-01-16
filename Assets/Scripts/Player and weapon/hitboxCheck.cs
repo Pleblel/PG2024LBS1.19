@@ -12,10 +12,13 @@ public class hitboxCheck : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         GameObject enemy = col.gameObject;
+        //tar fiende
         enemyHP enemyComponent = enemy.GetComponent<enemyHP>();
+        //tar vägg
         wall wallComponent = enemy.GetComponent<wall>();
+        //tar vilken spell det är
         weapon spell = weap.GetComponent<weapon>();
-        Debug.Log(spell.spells);
+        //kollar om det är en fiende
         if (enemyComponent != null)
         {
             if (spell.spells == 0)
@@ -44,6 +47,7 @@ public class hitboxCheck : MonoBehaviour
             }
             enemyComponent.damageCall(damage);
         }
+        //kollar om den spell träffar vägg
         if (wallComponent != null)
         {
             Destroy(transform.parent.gameObject);
