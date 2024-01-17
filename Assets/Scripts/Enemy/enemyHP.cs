@@ -8,6 +8,7 @@ public class enemyHP : MonoBehaviour
     private WaveControl waveSpawner;
     public float hp;
     public GameObject gore;
+    public GameObject spell;
 
     private void Start()
     {
@@ -15,16 +16,16 @@ public class enemyHP : MonoBehaviour
     }
 
     //Startar dmg funktion
-    public void damageCall(float damage)
+    public void damageCall(int damage)
     {
         StartCoroutine(TakeDamage(damage));
     }
     //skade funktion
-    IEnumerator TakeDamage(float damage)
+    IEnumerator TakeDamage(int damage)
     {
         //skadan
         hp -= damage;
-        if(damage == 100)
+        if(damage == 290)
         {
             //timing för blixt skada
             yield return new WaitForSecondsRealtime(0.3f);

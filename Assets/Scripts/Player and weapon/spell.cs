@@ -31,6 +31,7 @@ public class spell : MonoBehaviour
     [SerializeField] private AudioClip waterSpellSFX;
     [SerializeField] private AudioClip boulderSFX;
     [SerializeField] private AudioClip lightningSFX;
+    public int damage;
 
     //kallas när man klickar högerklick
     public void spellCast()
@@ -82,6 +83,9 @@ public class spell : MonoBehaviour
         var spellHitbox = Instantiate(hitbox1, weap.transform.position, rotation);
         spellInstance.GetComponent<Animator>().Play("Water_anim");
 
+        //tag
+        spellHitbox.tag = "water";
+
         //plays Water Audio
         SoundFXManager.instance.PlaySoundFXclip(waterSpellSFX, transform, 1f);
 
@@ -103,6 +107,10 @@ public class spell : MonoBehaviour
         var spellInstance = Instantiate(main, weap.transform.position, rotation);
         var spellHitbox = Instantiate(hitbox2, weap.transform.position, rotation);
         spellInstance.GetComponent<Animator>().Play("Fire_anim");
+        
+        //tag
+        spellHitbox.tag = "fire";
+
 
         //sätter rörelsen 
         spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed2, 0));
@@ -123,6 +131,9 @@ public class spell : MonoBehaviour
         var spellHitbox = Instantiate(hitbox3, weap.transform.position, rotation);
         spellInstance.GetComponent<Animator>().Play("Stone_anim");
 
+        //tag
+        spellHitbox.tag = "stone";
+
         //play sound FX for boulder
         SoundFXManager.instance.PlaySoundFXclip(boulderSFX, transform, 1f);
 
@@ -142,8 +153,11 @@ public class spell : MonoBehaviour
         //spawnar blixt och hitbox
         var spellInstance = Instantiate(main, weap.transform.position, Quaternion.identity);
         var spellHitbox = Instantiate(hitbox4, weap.transform.position, Quaternion.identity);
-        //sätter plats för blixt 
 
+        //tag
+        spellHitbox.tag = "lightning";
+
+        //sätter plats för blixt 
         spellInstance.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y + 5, 0);
         spellHitbox.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
         spellInstance.GetComponent<Animator>().Play("Lightning_anim");
