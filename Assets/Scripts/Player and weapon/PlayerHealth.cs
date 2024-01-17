@@ -6,7 +6,8 @@ public class PlayerHealth : MonoBehaviour
 {
 
     public int MaxHealth = 100;
-    float currenthealth;
+    public float currenthealth;
+    PlayerDeath playerdeath;
 
 
     public HealthBar healthbar;
@@ -15,25 +16,35 @@ public class PlayerHealth : MonoBehaviour
     {
         currenthealth = MaxHealth;
         healthbar.SetMaxHealth(MaxHealth);
+        playerdeath = GetComponent<PlayerDeath>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Slow health regen. - Lucas
         currenthealth += Time.deltaTime / 100;
     }
 
-    // Call this method to apply damage to the attached gameObject
+    // Call this method to apply damage to the attached gameObject - Lucas
     public void TakeDamage(int damage)
     {
+        // Removes health if damaged. - Lucas
         currenthealth -= damage;
+
         healthbar.SetHealth(currenthealth);
 
-        PlayerDeath();
+        // If the players health reaches 0, the player dies. - Elm
+        if (currenthealth <= 0)
+        {
+            DeathOfPlayer();
+        }
     }
 
-    void PlayerDeath()
+    //
+    public void DeathOfPlayer()
     {
+        playerdeath.PlayerDeathAnimation();
         //Kill animation of some sort
 
         //Disable the player.
