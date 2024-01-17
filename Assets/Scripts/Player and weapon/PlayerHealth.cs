@@ -41,11 +41,13 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    //
+    // Gets called when player dies. - Elm
     public void DeathOfPlayer()
     {
+        // Gets animation. - Elm
         playerdeath.PlayerDeathAnimation();
 
+        // Disables player. - Elm
         gameObject.SetActive(false);
     }
 }
