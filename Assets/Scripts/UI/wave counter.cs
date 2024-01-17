@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class wavecounter : MonoBehaviour
 {
-
+    //makes the code be able to work with the text in unity
     [SerializeField]
     GameObject WaveCounter;
 
     WaveControl waveControl;
 
     TextMeshProUGUI textComponent;
+
+    
     
     void Start()
     {
