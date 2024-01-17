@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-
     public int MaxHealth = 100;
     public float currenthealth;
     PlayerDeath playerdeath;
-
-
     public HealthBar healthbar;
+    private bool playerNotDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
         currenthealth = MaxHealth;
         healthbar.SetMaxHealth(MaxHealth);
-        playerdeath = GetComponent<PlayerDeath>();
     }
 
     // Update is called once per frame
@@ -34,18 +32,22 @@ public class PlayerHealth : MonoBehaviour
 
         healthbar.SetHealth(currenthealth);
 
-        // If the players health reaches 0, the player dies. - Elm
-        if (currenthealth <= 0)
+        // If the players health reaches 0, the player death method is called. - Elm
+        if (currenthealth <= 0 && playerNotDead == false)
         {
             DeathOfPlayer();
+            playerNotDead = true;
         }
     }
 
     // Gets called when player dies. - Elm
     public void DeathOfPlayer()
     {
+        // Gets PlayerDeath script in the context. - Elm
+        playerdeath = FindObjectOfType<PlayerDeath>();
+
         // Gets animation. - Elm
-        playerdeath.PlayerDeathAnimation();
+        StartCoroutine(playerdeath.PlayerDeathAnimation());
 
         // Disables player. - Elm
         gameObject.SetActive(false);
