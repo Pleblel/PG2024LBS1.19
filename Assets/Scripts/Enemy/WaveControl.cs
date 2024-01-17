@@ -7,30 +7,21 @@ using static UnityEditor.PlayerSettings;
 public class WaveControl : MonoBehaviour
 {
     [SerializeField] private float countdown;
-
     public static bool start = false;
-
     [SerializeField] private GameObject spawnPoint;
-
     public Wave[] waves;
-
     public int currentWaveIndex = 0;
-
     private bool readyToCountDown;
-
     float countdown2 = 0;
     public float Radius;
     Transform position;
-
     public Vector2 pos1;
     public Vector2 pos2;
     public Vector2 pos3;
     public Vector2 pos4;
-
     private Vector2 pos;
     private Vector2 rand;
     private bool playOnce = true;
-
     public Transform EnemyParent;
 
     // Start is called once
