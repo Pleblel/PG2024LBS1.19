@@ -45,9 +45,8 @@ public class PlayerHealth : MonoBehaviour
     public void DeathOfPlayer()
     {
         playerdeath.PlayerDeathAnimation();
-        //Kill animation of some sort
 
-        //Disable the player.
+        gameObject.SetActive(false);
     }
 }
 

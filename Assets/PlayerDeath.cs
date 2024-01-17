@@ -5,9 +5,18 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
     public GameObject player;
-    public void PlayerDeathAnimation()
+    Animator animator;
+
+    private void Start()
+    {
+        StartCoroutine(PlayerDeathAnimation());
+    }
+    public IEnumerator PlayerDeathAnimation()
     {
         transform.position = player.transform.position;
-        GetComponent<Animator>().Play("");
+        animator = GetComponent<Animator>();
+        animator.Play("playerdeathanimation");
+        yield return new WaitForSeconds(3.28f);
+        animator.SetFloat("playerdeathfloat", 0);
     }
 }
