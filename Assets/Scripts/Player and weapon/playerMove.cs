@@ -72,7 +72,6 @@ public class playerMove : MonoBehaviour
             counting++;
             if (counting == 10)
             {
-                Debug.Log(SoundFXManager.instance);
                 SoundFXManager.instance.PlayRandomSoundFXclip(SFXWalks, transform, 1f);
                 counting = 0;
             }
