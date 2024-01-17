@@ -41,6 +41,7 @@ public class hitboxCheck : MonoBehaviour
             {
                 //DMG VALUE LIGHTNING
                 damage = 150;
+                Destroy(gameObject);
             }
             enemyComponent.damageCall(damage);
         }

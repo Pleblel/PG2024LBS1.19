@@ -7,7 +7,7 @@ public class enemyHP : MonoBehaviour
     private WaveControl waveSpawner;
 
     public float hp;
-
+    public GameObject gore;
     private void Start()
     {
         waveSpawner = GetComponentInParent<WaveControl>();
@@ -26,6 +26,7 @@ public class enemyHP : MonoBehaviour
         }
         if (hp <= 0)
         {
+            Instantiate(gore);
             Destroy(gameObject);
 
             waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
