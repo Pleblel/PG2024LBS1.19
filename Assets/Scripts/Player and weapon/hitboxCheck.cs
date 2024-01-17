@@ -17,7 +17,6 @@ public class hitboxCheck : MonoBehaviour
         enemyHP enemyComponent = enemy.GetComponent<enemyHP>();
         wall wallComponent = enemy.GetComponent<wall>();
         weapon spell = weap.GetComponent<weapon>();
-        Debug.Log(spell.spells);
         if (enemyComponent != null)
         {
             if (spell.spells == 0)
