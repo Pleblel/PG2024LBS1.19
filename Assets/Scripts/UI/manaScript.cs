@@ -18,13 +18,13 @@ public class manaScript : MonoBehaviour
     void Start()
     {
         manaBarImage = gameObject.GetComponent<Image>();
-        currentMana = 50;
+        currentMana = 100;
     }
 
     private void Update()
     {
         // Formula for manaGain. - Elm & Pelle
-        manaGain = 0.065f + 0.000125f * currentMana;
+        manaGain = 0.05f + 0.0007f * currentMana;
 
         // Continuously adds mana. Stops if mana exceeds max. - Elm
         currentMana += manaGain;

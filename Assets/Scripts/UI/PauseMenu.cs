@@ -54,4 +54,3 @@ public class PauseMenu : MonoBehaviour
 
 
 }
-//gjord av Lucas
