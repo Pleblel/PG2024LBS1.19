@@ -6,10 +6,14 @@ public class PlayerDeath : MonoBehaviour
 {
     public GameObject player;
     Animator animator;
+    [SerializeField] private AudioClip PlayerDeathSFX;
 
     // Plays a death animation for the Player that stops at the last frame. - Elm
     public IEnumerator PlayerDeathAnimation()
     {
+
+        SoundFXManager.instance.PlaySoundFXclip(PlayerDeathSFX, transform, 1f);
+
         // Sets the gameObject the script is attached to (that will play the animation) to the players position. - Elm
         transform.position = player.transform.position + new Vector3 (0, 0, -1);
 

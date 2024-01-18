@@ -87,7 +87,7 @@ public class spell : MonoBehaviour
         spellHitbox.tag = "water";
 
         //plays Water Audio
-        SoundFXManager.instance.PlaySoundFXclip(waterSpellSFX, transform, 1f);
+        SoundFXManager.instance.PlaySoundFXclip(waterSpellSFX, transform, 0.7f);
 
         //sätter rörelsen 
         spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed1, 0));

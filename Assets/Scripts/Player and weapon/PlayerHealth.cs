@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     PlayerDeath playerdeath;
     public HealthBar healthbar;
     private bool playerNotDead = false;
+    [SerializeField] private AudioClip DMGSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,9 @@ public class PlayerHealth : MonoBehaviour
     // Call this method to apply damage to the attached gameObject - Lucas
     public void TakeDamage(int damage)
     {
+        //plays Player dmg sfx
+        SoundFXManager.instance.PlaySoundFXclip(DMGSFX, transform, 1f);
+
         // Removes health if damaged. - Lucas
         currenthealth -= damage;
 

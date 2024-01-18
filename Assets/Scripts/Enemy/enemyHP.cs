@@ -10,6 +10,8 @@ public class enemyHP : MonoBehaviour
     public GameObject gore;
     public GameObject spell;
 
+    [SerializeField] private AudioClip EnemyDeadSFX;
+
     private void Start()
     {
         waveSpawner = FindObjectOfType<WaveControl>();
@@ -33,6 +35,9 @@ public class enemyHP : MonoBehaviour
         //Fiende död koden
         if (hp <= 0)
         {
+
+            SoundFXManager.instance.PlaySoundFXclip(EnemyDeadSFX, transform, 1f);
+
             Instantiate(gore, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
 

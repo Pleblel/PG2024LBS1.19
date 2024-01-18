@@ -57,7 +57,7 @@ public class weapon : MonoBehaviour
         {
             //kod för att spela äld fx
             counting++;
-            if (counting == 50)
+            if (counting == 10)
             {
                 SoundFXManager.instance.PlaySoundFXclip(fireSpellSFX, transform, 1f);
                 counting = 0;

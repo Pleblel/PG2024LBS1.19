@@ -6,6 +6,8 @@ using static Unity.Collections.AllocatorManager;
 public class hitboxCheck : MonoBehaviour
 {
 
+    [SerializeField] private AudioClip CollisionSFXM;
+
     //Pelle
     public GameObject weap;
     int damage;
@@ -17,10 +19,14 @@ public class hitboxCheck : MonoBehaviour
         enemyHP enemyComponent = enemy.GetComponent<enemyHP>();
         wall wallComponent = enemy.GetComponent<wall>();
         weapon spell = weap.GetComponent<weapon>();
+        
         if (enemyComponent != null)
         {
             if (gameObject.tag == "water")
             {
+                //Plays collision audio FX
+                SoundFXManager.instance.PlaySoundFXclip(CollisionSFXM, transform, 0.5f);
+
                 //förstör proj och skada
                 damage = 80;
                 Destroy(transform.parent.gameObject);
@@ -35,11 +41,17 @@ public class hitboxCheck : MonoBehaviour
             }
             if (gameObject.tag == "stone")
             {
+                //Plays collision audio FX
+                SoundFXManager.instance.PlaySoundFXclip(CollisionSFXM, transform, 0.5f);
+
                 //skada
                 damage = 150;
             }
             if (gameObject.tag == "lightning")
             {
+                //Plays collision audio FX
+                SoundFXManager.instance.PlaySoundFXclip(CollisionSFXM, transform, 0.5f);
+
                 //förstör proj och skada
                 damage = 290;
                 Destroy(gameObject);
@@ -48,6 +60,9 @@ public class hitboxCheck : MonoBehaviour
         }
         if (wallComponent != null)
         {
+            //Plays collision audio FX
+            SoundFXManager.instance.PlaySoundFXclip(CollisionSFXM, transform, 0.5f);
+
             Destroy(transform.parent.gameObject);
             Destroy(gameObject);
         }
