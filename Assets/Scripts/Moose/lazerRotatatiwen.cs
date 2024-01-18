@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class lazerRotatatiwen : MonoBehaviour
 {
+    //pelle
     public int rotSpeed;
     private void Start()
     {
@@ -12,11 +13,13 @@ public class lazerRotatatiwen : MonoBehaviour
 
     void Update()
     {
+        //snurrar
         transform.rotation *= Quaternion.Euler(0, 0, rotSpeed * Time.deltaTime);
     }
     IEnumerator des()
     {
-        yield return new WaitForSeconds(400 * Time.deltaTime);
+        //tar bort efter 1500 * 1/fps
+        yield return new WaitForSeconds(1500 * Time.deltaTime);
         Destroy(gameObject);
     }
 }

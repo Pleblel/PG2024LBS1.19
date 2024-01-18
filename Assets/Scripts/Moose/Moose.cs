@@ -18,6 +18,8 @@ public class Moose : MonoBehaviour
     public float distanceMoose2;
     float timer;
     public float countingCooldown;
+    public int enemyDamage;
+    public SpriteRenderer sr;
     private void Start()
     {
         //body is rigid
@@ -28,6 +30,22 @@ public class Moose : MonoBehaviour
 
     private void Update()
     {
+        if(transform.position.x > 500)
+        {
+            return;
+        }
+        // Finds player position relative to the gameObject - Elm
+        Vector2 pos = Player.transform.position - gameObject.transform.position;
+
+        // Flip the sprite depending on whether the enemy is to the left or right of the Player. - Elm (med kodhjälp från Pelle)
+        if (pos.x > 0)
+        {
+            sr.flipX = true;
+        }
+        else
+        {
+            sr.flipX = false;
+        }
         Vector2 newPlayerPos = Player.transform.position - gameObject.transform.position;
         timer += Time.deltaTime;
         if (MooseTooClose == false && countingCooldown >= 150f)
@@ -84,7 +102,7 @@ public class Moose : MonoBehaviour
             Debug.Log("moose is not close enough");
             MooseTooClose = false;
             timer = 0f;
-            
+            Player.GetComponent<PlayerHealth>().TakeDamage(enemyDamage);
         }
     }
 }

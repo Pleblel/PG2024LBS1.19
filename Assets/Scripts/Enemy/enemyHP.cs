@@ -8,7 +8,6 @@ public class enemyHP : MonoBehaviour
     private WaveControl waveSpawner;
     public float hp;
     public GameObject gore;
-    public GameObject spell;
 
     private void Start()
     {
@@ -16,12 +15,12 @@ public class enemyHP : MonoBehaviour
     }
 
     //Startar dmg funktion
-    public void damageCall(int damage)
+    public void damageCall(int damage, int spell)
     {
-        StartCoroutine(TakeDamage(damage));
+        StartCoroutine(TakeDamage(damage, spell));
     }
     //skade funktion
-    IEnumerator TakeDamage(int damage)
+    IEnumerator TakeDamage(int damage, int spell)
     {
         //skadan
         hp -= damage;
@@ -33,7 +32,10 @@ public class enemyHP : MonoBehaviour
         //Fiende död koden
         if (hp <= 0)
         {
-            Instantiate(gore, gameObject.transform.position, Quaternion.identity);
+            if (spell != 4)
+            {
+                Instantiate(gore, gameObject.transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
 
             // Tells WaveControl script to remove 1 from the waves[currentWaveIndex].enemiesLeft. - Elm

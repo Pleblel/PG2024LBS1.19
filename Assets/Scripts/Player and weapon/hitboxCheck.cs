@@ -9,7 +9,7 @@ public class hitboxCheck : MonoBehaviour
     //Pelle
     public GameObject weap;
     int damage;
-
+    int spells;
     //checks collision and gives dmg
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -21,7 +21,7 @@ public class hitboxCheck : MonoBehaviour
         {
             if (gameObject.tag == "water")
             {
-
+                spells = 1;
                 //förstör proj och skada
                 damage = 80;
                 Destroy(transform.parent.gameObject);
@@ -29,7 +29,7 @@ public class hitboxCheck : MonoBehaviour
             }
             if (gameObject.tag == "fire")
             {
-
+                spells = 2;
                 //förstör proj och skada
                 damage = 5;
                 Destroy(transform.parent.gameObject);
@@ -38,19 +38,19 @@ public class hitboxCheck : MonoBehaviour
             if (gameObject.tag == "stone")
             {
 
-
+                spells = 3;
                 //skada
                 damage = 150;
             }
             if (gameObject.tag == "lightning")
             {
-
+                spells = 4;
                 //förstör proj och skada
                 damage = 290;
                 Destroy(gameObject);
 
             }
-            enemyComponent.damageCall(damage);
+            enemyComponent.damageCall(damage, spells);
         }
         if (wallComponent != null)
         {

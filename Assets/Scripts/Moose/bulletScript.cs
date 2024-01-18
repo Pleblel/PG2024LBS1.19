@@ -12,21 +12,26 @@ public class bulletScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //tar ridged body och player
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
+        //tar player pos och skjuter
         Vector3 dir = player.transform.position - transform.position;
         rb.velocity = new Vector2(dir.x, dir.y).normalized * force;
 
+        //roterar bullet
         float rot = Mathf.Atan2(-dir.y, -dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot);
         StartCoroutine(des());
     }
     private void Update()
     {
+        //tar player pos och homar in
         Vector3 dir = player.transform.position - transform.position;
         rb.velocity += new Vector2(dir.x, dir.y).normalized / home;
 
+        //roterar bullet
         float rot = Mathf.Atan2(-dir.y, -dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot);
     }
