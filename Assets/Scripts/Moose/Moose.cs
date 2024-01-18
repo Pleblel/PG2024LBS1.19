@@ -52,7 +52,7 @@ public class Moose : MonoBehaviour
           Vector2 Mooserandom = new Vector2(newPlayerPos.x * -1, newPlayerPos.y * -1);
           Vector2 dirForce2 = Mooserandom.normalized * mvmSpeedMoose;
           MooseRigidBody.velocity = dirForce2;
-            countingCooldown++;
+            countingCooldown += Time.deltaTime;
             
            return;
         }

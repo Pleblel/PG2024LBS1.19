@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class MooseAttack : MonoBehaviour
 {
-    public float mSpeed2;
-    public GameObject player;
-    public quaternion rot;
-    public GameObject Proj1;
     public bool mooseClose;
+    float timer;
+    float timer2;
+    public GameObject bullet;
+    public GameObject lazoor;
+    public Transform bulletpos;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,25 +22,34 @@ public class MooseAttack : MonoBehaviour
     {
         //gets "MooseTooClose" bool value
         mooseClose = GetComponent<Moose>().MooseTooClose;
-
-        Vector2 dir = transform.position - player.transform.position;
-
-        //sätter vinkel
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
-        //rotar boken runt en position
-        rot = Quaternion.AngleAxis(angle, Vector3.forward);
-
+        timer += Time.deltaTime;
+        timer2 += Time.deltaTime;
 
         if (mooseClose == false)
         {
-            var spellInstance = Instantiate(Proj1, gameObject.transform.position, rot);
-            spellInstance.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.01f * mSpeed2, 0));
-
+            if (timer > 4)
+            {
+                timer = 0;
+                shoot();
+            }
         }
-        
-        
+
+        if (mooseClose == false)
+        {
+            if (timer2 > 10)
+            {
+                timer2 = 0;
+                lazer();
+            }
+        }
+    }
+    void shoot()
+    {
+        Instantiate(bullet, bulletpos.position, quaternion.identity);
     }
 
-    
+    void lazer()
+    {
+        Instantiate(lazoor, bulletpos.position, quaternion.identity);
+    }
 }

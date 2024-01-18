@@ -24,7 +24,7 @@ public class enemyHP : MonoBehaviour
     {
         //skadan
         hp -= damage;
-        if(damage == 100)
+        if(damage == 290)
         {
             //timing för blixt skada
             yield return new WaitForSecondsRealtime(0.3f);
