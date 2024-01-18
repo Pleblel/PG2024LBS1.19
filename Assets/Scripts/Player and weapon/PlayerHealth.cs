@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-
     public int MaxHealth = 100;
-    float currenthealth;
-
-
+    public float currenthealth;
+    PlayerDeath playerdeath;
     public HealthBar healthbar;
+    private bool playerNotDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,23 +20,37 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Slow health regen. - Lucas
         currenthealth += Time.deltaTime / 100;
     }
 
-    // Call this method to apply damage to the attached gameObject
+    // Call this method to apply damage to the attached gameObject - Lucas
     public void TakeDamage(int damage)
     {
+        // Removes health if damaged. - Lucas
         currenthealth -= damage;
+
         healthbar.SetHealth(currenthealth);
 
-        PlayerDeath();
+        // If the players health reaches 0, the player death method is called. - Elm
+        if (currenthealth <= 0 && playerNotDead == false)
+        {
+            DeathOfPlayer();
+            playerNotDead = true;
+        }
     }
 
-    void PlayerDeath()
+    // Gets called when player dies. - Elm
+    public void DeathOfPlayer()
     {
-        //Kill animation of some sort
+        // Gets PlayerDeath script in the context. - Elm
+        playerdeath = FindObjectOfType<PlayerDeath>();
 
-        //Disable the player.
+        // Gets animation. - Elm
+        StartCoroutine(playerdeath.PlayerDeathAnimation());
+
+        // Disables player. - Elm
+        gameObject.SetActive(false);
     }
 }
 

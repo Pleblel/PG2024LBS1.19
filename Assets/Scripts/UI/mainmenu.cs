@@ -8,7 +8,7 @@ public class mainmenu : MonoBehaviour
     // Starts the game if u press "play"
     public void playGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(2);
 
         WaveControl.start = true;
     }

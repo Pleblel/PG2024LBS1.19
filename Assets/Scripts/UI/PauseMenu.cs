@@ -49,8 +49,10 @@ public class PauseMenu : MonoBehaviour
     //loads u back to main menu
     public void quitgame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 
 
 }
+//gjord av Lucas

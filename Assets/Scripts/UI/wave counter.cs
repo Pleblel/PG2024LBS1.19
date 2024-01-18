@@ -8,8 +8,11 @@ public class wavecounter : MonoBehaviour
     //makes the code be able to work with the text in unity
     [SerializeField]
     GameObject WaveCounter;
+
     WaveControl waveControl;
+
     TextMeshProUGUI textComponent;
+
     
     void Start()
     {
@@ -24,4 +27,6 @@ public class wavecounter : MonoBehaviour
         textComponent.text = waves;
     }
 }
-//Made by Lucas och Elm
+
+//gjord av Lucas och Elm
+

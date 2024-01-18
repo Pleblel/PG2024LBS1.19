@@ -11,7 +11,6 @@ public class playerMove : MonoBehaviour
     public Rigidbody2D rb;
     public float moveSpeed;
     private Vector2 moveDir;
-    public GameObject dust;
     private bool canRoll = true;
     private bool isRolling = false;
     public float rollingSpeed;
@@ -26,6 +25,7 @@ public class playerMove : MonoBehaviour
     private AudioClip SFXDash;
     SpriteRenderer sr;
     Animator animator;
+    public TrailRenderer tr;
 
     private void Start()
     {
@@ -72,7 +72,6 @@ public class playerMove : MonoBehaviour
             counting++;
             if (counting == 10)
             {
-                Debug.Log(SoundFXManager.instance);
                 SoundFXManager.instance.PlayRandomSoundFXclip(SFXWalks, transform, 1f);
                 counting = 0;
             }
@@ -88,13 +87,14 @@ public class playerMove : MonoBehaviour
         canRoll = false;
         isRolling = true;
         rb.velocity += new Vector2(moveDir.x * rollingSpeed, moveDir.y * rollingSpeed );
-
+        tr.emitting = true;
         //DASH AUDIO HERE!
         SoundFXManager.instance.PlaySoundFXclip(SFXDash, transform, RollingVolume);
 
         //startar cooldown och säger att man inte rullar
         yield return new WaitForSeconds(rollingTime);
         isRolling = false;
+        tr.emitting = false;
         yield return new WaitForSeconds(rollingCooldown);
         canRoll = true;
         

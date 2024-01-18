@@ -7,8 +7,8 @@ public class hitboxCheck : MonoBehaviour
 {
 
     //Pelle
-    public float damage;
     public GameObject weap;
+    int damage;
 
     //checks collision and gives dmg
     void OnTriggerEnter2D(Collider2D col)
@@ -17,32 +17,38 @@ public class hitboxCheck : MonoBehaviour
         enemyHP enemyComponent = enemy.GetComponent<enemyHP>();
         wall wallComponent = enemy.GetComponent<wall>();
         weapon spell = weap.GetComponent<weapon>();
-        Debug.Log(spell.spells);
         if (enemyComponent != null)
         {
-            if (spell.spells == 0)
+            if (gameObject.tag == "water")
             {
-                //DMG VALUE WATER 
+
+                //förstör proj och skada
                 damage = 80;
                 Destroy(transform.parent.gameObject);
                 Destroy(gameObject);
             }
-            if (spell.spells == 1)
+            if (gameObject.tag == "fire")
             {
-                //DMG VALUE FIRE 
-                damage = 1;
+
+                //förstör proj och skada
+                damage = 5;
                 Destroy(transform.parent.gameObject);
                 Destroy(gameObject);
             }
-            if (spell.spells == 2)
+            if (gameObject.tag == "stone")
             {
-                //DMG VALUE BOULDER 
-                damage = 60;
-            }
-            if (spell.spells == 3)
-            {
-                //DMG VALUE LIGHTNING 
+
+
+                //skada
                 damage = 150;
+            }
+            if (gameObject.tag == "lightning")
+            {
+
+                //förstör proj och skada
+                damage = 290;
+                Destroy(gameObject);
+
             }
             enemyComponent.damageCall(damage);
         }

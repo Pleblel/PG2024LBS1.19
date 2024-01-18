@@ -24,11 +24,11 @@ public class weaponHand : MonoBehaviour
         //ändar saken boken roterar runt
         if (pos.x >= 0.5f)
         {
-            transform.position = new Vector2(player.transform.position.x + 0.3f, transform.position.y);
+            transform.position = new Vector3(player.transform.position.x + 0.3f, transform.position.y, -1);
         }
         else if (pos.x <= 0.5f)
         {
-            transform.position = new Vector2(player.transform.position.x - 0.3f, transform.position.y);
+            transform.position = new Vector3(player.transform.position.x - 0.3f, transform.position.y, -1);
         }
     }
 
