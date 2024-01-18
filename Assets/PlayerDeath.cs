@@ -17,10 +17,10 @@ public class PlayerDeath : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.Play("playerdeathanimation");
 
-        // Waits for 3.28 seconds. - Elm
+        // Waits for 3.2 seconds. - Elm
         yield return new WaitForSeconds(3.2f);
 
         // Sets the animation speed to 0 (effectively stopping it) - Elm
-        animator.SetFloat("playerdeathfloat", 0);
+        animator.SetFloat("playerdeathfloat", 0f);
     }
 }
