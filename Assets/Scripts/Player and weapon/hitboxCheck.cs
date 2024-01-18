@@ -29,7 +29,7 @@ public class hitboxCheck : MonoBehaviour
             if (gameObject.tag == "fire")
             {
                 //förstör proj och skada
-                damage = 1;
+                damage = 5;
                 Destroy(transform.parent.gameObject);
                 Destroy(gameObject);
             }
