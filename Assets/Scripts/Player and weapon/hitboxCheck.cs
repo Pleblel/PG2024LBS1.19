@@ -21,28 +21,34 @@ public class hitboxCheck : MonoBehaviour
         {
             if (gameObject.tag == "water")
             {
-                //förstör proj och skada
+
+                //fÃ¶rstÃ¶r proj och skada
                 damage = 80;
                 Destroy(transform.parent.gameObject);
                 Destroy(gameObject);
             }
             if (gameObject.tag == "fire")
             {
-                //förstör proj och skada
+
+                //fÃ¶rstÃ¶r proj och skada
                 damage = 5;
                 Destroy(transform.parent.gameObject);
                 Destroy(gameObject);
             }
             if (gameObject.tag == "stone")
             {
+
+
                 //skada
                 damage = 150;
             }
             if (gameObject.tag == "lightning")
             {
-                //förstör proj och skada
+
+                //fÃ¶rstÃ¶r proj och skada
                 damage = 290;
                 Destroy(gameObject);
+
             }
             enemyComponent.damageCall(damage);
         }

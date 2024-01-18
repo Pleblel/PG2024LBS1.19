@@ -6,7 +6,6 @@ using UnityEngine;
 public class SoundFXManager : MonoBehaviour
 {
     public static SoundFXManager instance;
-
     [SerializeField] private AudioSource soundFXObject;
     AudioSource loopSource;
 

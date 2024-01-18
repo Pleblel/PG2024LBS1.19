@@ -14,7 +14,6 @@ public class wavecounter : MonoBehaviour
     TextMeshProUGUI textComponent;
 
     
-    
     void Start()
     {
         textComponent = WaveCounter.GetComponent<TextMeshProUGUI>();
@@ -28,4 +27,6 @@ public class wavecounter : MonoBehaviour
         textComponent.text = waves;
     }
 }
+
 //gjord av Lucas och Elm
+
