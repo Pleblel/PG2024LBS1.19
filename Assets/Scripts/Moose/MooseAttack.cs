@@ -11,6 +11,8 @@ public class MooseAttack : MonoBehaviour
     public GameObject bullet;
     public GameObject lazoor;
     public Transform bulletpos;
+    [SerializeField] private AudioClip MooseLazer;
+    [SerializeField] private AudioClip Moosebullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class MooseAttack : MonoBehaviour
         {
             if (timer > 4)
             {
+                SoundFXManager.instance.PlaySoundFXclip(Moosebullet, transform, 1f);
                 timer = 0;
                 shoot();
             }
@@ -38,6 +41,7 @@ public class MooseAttack : MonoBehaviour
         {
             if (timer2 > 10)
             {
+                SoundFXManager.instance.PlaySoundFXclip(MooseLazer, transform, 1f);
                 timer2 = 0;
                 lazer();
             }
