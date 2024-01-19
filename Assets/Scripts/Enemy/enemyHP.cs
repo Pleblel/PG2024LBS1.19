@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyHP : MonoBehaviour
 {
+
     //Pelle
     private WaveControl waveSpawner;
     public float hp;
@@ -35,6 +36,7 @@ public class enemyHP : MonoBehaviour
             if (spell != 4)
             {
                 Instantiate(gore, gameObject.transform.position, Quaternion.identity);
+
             }
             Destroy(gameObject);
 

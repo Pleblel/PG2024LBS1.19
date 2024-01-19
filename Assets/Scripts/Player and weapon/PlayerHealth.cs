@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private AudioClip DMGSFX;
     public int MaxHealth = 100;
     public float currenthealth;
     PlayerDeath playerdeath;
@@ -27,6 +28,9 @@ public class PlayerHealth : MonoBehaviour
     // Call this method to apply damage to the attached gameObject - Lucas
     public void TakeDamage(int damage)
     {
+        //DMG Sound FX
+        SoundFXManager.instance.PlaySoundFXclip(DMGSFX, transform, 1f);
+
         // Removes health if damaged. - Lucas
         currenthealth -= damage;
 

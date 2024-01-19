@@ -5,7 +5,7 @@ using static Unity.Collections.AllocatorManager;
 
 public class hitboxCheck : MonoBehaviour
 {
-
+    [SerializeField] private AudioClip CollisionSFX;
     //Pelle
     public GameObject weap;
     int damage;
@@ -21,6 +21,9 @@ public class hitboxCheck : MonoBehaviour
         {
             if (gameObject.tag == "water")
             {
+                //Plays sound FX
+                SoundFXManager.instance.PlaySoundFXclip(CollisionSFX, transform, 1f);
+
                 spells = 1;
                 //förstör proj och skada
                 damage = 80;
@@ -37,6 +40,8 @@ public class hitboxCheck : MonoBehaviour
             }
             if (gameObject.tag == "stone")
             {
+                //Plays sound FX
+                SoundFXManager.instance.PlaySoundFXclip(CollisionSFX, transform, 1f);
 
                 spells = 3;
                 //skada
@@ -44,6 +49,9 @@ public class hitboxCheck : MonoBehaviour
             }
             if (gameObject.tag == "lightning")
             {
+                //Plays sound FX
+                SoundFXManager.instance.PlaySoundFXclip(CollisionSFX, transform, 1f);
+
                 spells = 4;
                 //förstör proj och skada
                 damage = 290;
@@ -54,6 +62,9 @@ public class hitboxCheck : MonoBehaviour
         }
         if (wallComponent != null)
         {
+            //Plays sound FX
+            SoundFXManager.instance.PlaySoundFXclip(CollisionSFX, transform, 1f);
+
             Destroy(transform.parent.gameObject);
             Destroy(gameObject);
         }

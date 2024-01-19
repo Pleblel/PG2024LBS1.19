@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
+
+    [SerializeField] private AudioClip DeathSFX;
     public GameObject player;
     Animator animator;
 
     // Plays a death animation for the Player that stops at the last frame. - Elm
     public IEnumerator PlayerDeathAnimation()
     {
+        //Plays Death Sound FX
+        SoundFXManager.instance.PlaySoundFXclip(DeathSFX, transform, 1f);
+
         // Sets the gameObject the script is attached to (that will play the animation) to the players position. - Elm
         transform.position = player.transform.position + new Vector3 (0, 0, -1);
 
