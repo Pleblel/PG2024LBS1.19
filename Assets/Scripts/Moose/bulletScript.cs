@@ -1,9 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class bulletScript : MonoBehaviour
 {
+    //pelle
     private GameObject player;
     private Rigidbody2D rb;
     public float force;

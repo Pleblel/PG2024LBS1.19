@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
 public class MooseAttack : MonoBehaviour
 {
+    //pelle
     public bool mooseClose;
     float timer;
     float timer2;
@@ -27,6 +26,7 @@ public class MooseAttack : MonoBehaviour
         timer += Time.deltaTime;
         timer2 += Time.deltaTime;
 
+        //kollar om moose för nära och timer > 4 och sedan skjuter
         if (mooseClose == false)
         {
             if (timer > 4)
@@ -37,6 +37,7 @@ public class MooseAttack : MonoBehaviour
             }
         }
 
+        //kollar om moose för nära och timer > 10 och sedan skjuter
         if (mooseClose == false)
         {
             if (timer2 > 10)
@@ -47,11 +48,12 @@ public class MooseAttack : MonoBehaviour
             }
         }
     }
+    //skapar bullet
     void shoot()
     {
         Instantiate(bullet, bulletpos.position, quaternion.identity);
     }
-
+//skapar laser
     void lazer()
     {
         Instantiate(lazoor, bulletpos.position, quaternion.identity);
