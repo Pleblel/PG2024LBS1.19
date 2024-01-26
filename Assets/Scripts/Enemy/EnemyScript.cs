@@ -17,7 +17,7 @@ public class EnemyScript : MonoBehaviour
 
     void Update()
     {
-        //This If statement is intended to stop the enemy if it is past a certain point. Used to render cloned enemy bases useless by crippling their movement. - Elm
+        //This If statement is intended to stop the enemy if it is past a certain point. Used to cripple unused enemy assets. - Elm
         if (gameObject.transform.position.x > 500)
         {
             return;
