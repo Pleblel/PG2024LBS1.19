@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     PlayerDeath playerdeath;
     public HealthBar healthbar;
     private bool playerNotDead = false;
-    private float regenTimer = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +20,11 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        regenTimer -= Time.deltaTime;
-
         // Slow health regen (2HP/s). - Elm
-        if (regenTimer <= 0)
+        if (playerNotDead == false)
         {
             currenthealth += 2 * Time.deltaTime;
-            regenTimer = 0;
+            healthbar.SetHealth(currenthealth);
         }
     }
 
@@ -35,8 +33,6 @@ public class PlayerHealth : MonoBehaviour
     {
         //DMG Sound FX
         SoundFXManager.instance.PlaySoundFXclip(DMGSFX, transform, 1f);
-
-        regenTimer = 3;
 
         // Removes health if damaged. - Lucas
         currenthealth -= damage;
