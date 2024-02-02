@@ -56,6 +56,9 @@ public class EndlessWaveSpawner : MonoBehaviour
         if (randomint2 == 0)
         {
             
-        } else if (randomint2 != 0 && )
+        } else if (randomint2 != 0)
+        {
+
+        }
     }
 }
