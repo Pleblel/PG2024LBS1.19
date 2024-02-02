@@ -25,6 +25,10 @@ public class MooseAttack : MonoBehaviour
         mooseClose = GetComponent<Moose>().MooseTooClose;
         timer += Time.deltaTime;
         timer2 += Time.deltaTime;
+        if (gameObject.transform.position.x >= 500)
+        {
+            return;
+        }
 
         //kollar om moose för nära och timer > 4 och sedan skjuter
         if (mooseClose == false)
