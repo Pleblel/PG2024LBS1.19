@@ -7,6 +7,7 @@ public class EndlessWaveSpawner : MonoBehaviour
 {
     public float Radius;
     float countdown = 0;
+    float countdown2 = 0;
     public Vector2 pos1;
     public Vector2 pos2;
     public Vector2 pos3;
@@ -17,6 +18,7 @@ public class EndlessWaveSpawner : MonoBehaviour
     private void Update()
     {
         countdown += Time.deltaTime;
+        countdown2 += Time.deltaTime;
 
         // After 0.2 seconds have passed or the script starts for the first time: Updates position of the spawnpoint for enemies. - Elm
         if (countdown >= 0.2f || playOnce)
@@ -54,6 +56,6 @@ public class EndlessWaveSpawner : MonoBehaviour
         if (randomint2 == 0)
         {
             
-        }
+        } else if (randomint2 != 0 && )
     }
 }
