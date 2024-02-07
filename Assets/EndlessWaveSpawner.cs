@@ -14,6 +14,9 @@ public class EndlessWaveSpawner : MonoBehaviour
     public Vector2 pos4;
     private Vector2 pos;
     private Vector2 rand;
+    public GameObject enemyEasyObject;
+    public GameObject enemyHardObject;
+    public Transform EnemyParent;
     private bool playOnce = true;
     private void Update()
     {
@@ -51,14 +54,21 @@ public class EndlessWaveSpawner : MonoBehaviour
             playOnce = false;
         }
 
-        int randomint2 = Random.Range(0, 6);
+        int randomint2 = Random.Range(0, 4);
 
-        if (randomint2 == 0)
+        if (randomint2 == 0 && countdown2 > 1)
         {
-            
-        } else if (randomint2 != 0)
+            Instantiate(enemyHardObject, pos, Quaternion.identity, EnemyParent);
+            Debug.Log("Spawned EnemyHard at position" + pos);
+            countdown2 = 0;
+        } 
+        else if (randomint2 != 0 && countdown2 > 1)
         {
-
+            Instantiate(enemyEasyObject, pos, Quaternion.identity, EnemyParent);
+            Debug.Log("Spawned EnemyEasy at position " + pos);
+            countdown2 = 0;
         }
+
+        
     }
 }
