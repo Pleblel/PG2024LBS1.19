@@ -8,7 +8,7 @@ public class MooseAttack : MonoBehaviour
     float timer;
     float timer2;
     public GameObject bullet;
-    public GameObject lazoor;
+    public GameObject lazer;
     public Transform bulletpos;
     [SerializeField] private AudioClip MooseLazer;
     [SerializeField] private AudioClip Moosebullet;
@@ -26,6 +26,12 @@ public class MooseAttack : MonoBehaviour
         timer += Time.deltaTime;
         timer2 += Time.deltaTime;
 
+        //gör så att den inte attakerar innan den spawnar
+        if (transform.position.x >= 500)
+        {
+            return;
+        }
+
         //kollar om moose för nära och timer > 4 och sedan skjuter
         if (mooseClose == false)
         {
@@ -33,7 +39,7 @@ public class MooseAttack : MonoBehaviour
             {
                 SoundFXManager.instance.PlaySoundFXclip(Moosebullet, transform, 1f);
                 timer = 0;
-                shoot();
+                Shoot();
             }
         }
 
@@ -44,18 +50,18 @@ public class MooseAttack : MonoBehaviour
             {
                 SoundFXManager.instance.PlaySoundFXclip(MooseLazer, transform, 1f);
                 timer2 = 0;
-                lazer();
+                Lazer();
             }
         }
     }
     //skapar bullet
-    void shoot()
+    void Shoot()
     {
         Instantiate(bullet, bulletpos.position, quaternion.identity);
     }
 //skapar laser
-    void lazer()
+    void Lazer()
     {
-        Instantiate(lazoor, bulletpos.position, quaternion.identity);
+        Instantiate(lazer, bulletpos.position, quaternion.identity);
     }
 }
