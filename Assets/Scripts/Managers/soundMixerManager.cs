@@ -22,4 +22,10 @@ public class NewBehaviourScript : MonoBehaviour
         //audioMixer.SetFloat("MusicVolume", level);
         audioMixer.SetFloat("MusicVolume", Mathf.Log10(level) * 20);
     }
+
+    public void SetBackMusic(float level)
+    {
+        //audioMixer.SetFloat("BackgroundMusic", level);
+        audioMixer.SetFloat("BackgroundMusic", Mathf.Log10(level) * 20);
+    }
 }
