@@ -10,6 +10,7 @@ public class manaScript : MonoBehaviour
     public float manaPercentage;
     [SerializeField]
     private AudioClip ManabarfullSFX;
+    public PauseMenu pausemenu;
     public float ManaReminderVolume;
     private float timer;
     // Start is called before the first frame update
@@ -21,6 +22,13 @@ public class manaScript : MonoBehaviour
 
     private void Update()
     {
+        pausemenu = GetComponent<PauseMenu>();
+
+        if (pausemenu.GameIsPaused)
+        {
+            return;
+        }
+
         // Formula for manaGain. - Elm & Pelle
         manaGain = 0.065f + 0.000125f * currentMana;
 
@@ -43,7 +51,7 @@ public class manaScript : MonoBehaviour
         UpdateManaBar();
     }
 
-    // Updates the manabar when the currentMana variable changes.
+    // Updates the manabar when the currentMana variable changes. - Elm
     private void UpdateManaBar()
     {
         manaPercentage = currentMana / maxMana;
