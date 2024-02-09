@@ -22,18 +22,18 @@ public class manaScript : MonoBehaviour
 
     private void Update()
     {
-        pausemenu = GetComponent<PauseMenu>();
-
         if (pausemenu.GameIsPaused)
         {
+            Debug.Log("Game is paused");
             return;
         }
+        Debug.Log("Game is resumed");
 
         // Formula for manaGain. - Elm & Pelle
-        manaGain = 0.065f + 0.000125f * currentMana;
+        manaGain = 3.5f + 0.0125f * currentMana;
 
         // Continuously adds mana. Stops if mana exceeds max. - Elm
-        currentMana += manaGain;
+        currentMana += manaGain * Time.deltaTime;
         if (currentMana > maxMana)
         {
             currentMana = maxMana;

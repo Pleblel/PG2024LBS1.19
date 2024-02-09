@@ -20,6 +20,11 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currenthealth >= MaxHealth)
+        {
+            currenthealth = MaxHealth;
+            healthbar.SetMaxHealth(MaxHealth);
+        }
         // Slow health regen (2HP/s). - Elm
         if (playerNotDead == false)
         {

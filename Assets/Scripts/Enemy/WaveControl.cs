@@ -42,7 +42,7 @@ public class WaveControl : MonoBehaviour
         // After 0.2 seconds have passed or the script starts for the first time: Updates position of the spawnpoint for enemies. - Elm
         if (countdown2 >= 0.2f || playOnce)
         {
-            // Updates variable "pos" (Spawn position of enemy) randomly between pos1 - pos4 with Random.Range() method. - Elm
+            // Updates variable "pos" (Spawn position of enemy) randomly between pos1 - pos3 with Random.Range() method. - Elm
             int randomInt1 = Random.Range(0, 3);
 
             if (randomInt1 == 0)
@@ -59,6 +59,7 @@ public class WaveControl : MonoBehaviour
             }
             else if (randomInt1 == 3)
             {
+                // The rangemax is exclusive in the Random class, which was initially skipping one spot of spawning and was a bug, but now it's an intended feature. - Elm
                 pos = pos4;
             }
 
