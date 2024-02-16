@@ -135,7 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1500
   gore: {fileID: 0}
-  spell: {fileID: 0}
 --- !u!114 &704054593266534683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +155,8 @@ MonoBehaviour:
   MARS: 6
   distanceMoose2: 9
   countingCooldown: 0
+  enemyDamage: 0
+  sr: {fileID: 0}
 --- !u!114 &2084765899730012884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,8 +171,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mooseClose: 0
   bullet: {fileID: 5128322453948206774, guid: 56c5cbc60d4814e46b2aa3d904764649, type: 3}
-  lazoor: {fileID: 1374166173829606942, guid: e206398ecb2a8594abac5dd797d1669e, type: 3}
+  lazer: {fileID: 0}
   bulletpos: {fileID: 6408083525005268519}
+  MooseLazer: {fileID: 0}
+  Moosebullet: {fileID: 0}
 --- !u!61 &7946817862317777662
 BoxCollider2D:
   m_ObjectHideFlags: 0
