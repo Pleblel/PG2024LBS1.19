@@ -12,7 +12,7 @@ public class bulletScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //tar ridged body och player
+        //tar rigid body och player
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
