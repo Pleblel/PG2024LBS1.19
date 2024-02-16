@@ -27,11 +27,11 @@ public class WaveControl : MonoBehaviour
         // Starts the countdown to the next wave. 0 by default, so wave 1 starts immediately. - Elm
         readyToCountDown = true;
 
-            // 
-            for (int i = 0; i < waves.Length; i++)
-            {
-                waves[i].enemiesLeft = waves[i].enemies.Length;
-            }
+        // Sets the enemiesleft value to the amount of enemies in the array with the index of the current wave. - Elm
+        for (int i = 0; i < waves.Length; i++)
+        {
+            waves[i].enemiesLeft = waves[i].enemies.Length;
+        }
     }
 
     // Update is called once per frame
