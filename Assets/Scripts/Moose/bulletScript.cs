@@ -18,7 +18,7 @@ public class bulletScript : MonoBehaviour
 
         //tar player pos och skjuter
         Vector3 dir = player.transform.position - transform.position;
-        rb.velocity = new Vector2(dir.x, dir.y).normalized * force;
+        rb.linearVelocity = new Vector2(dir.x, dir.y).normalized * force;
 
         //roterar bullet
         float rot = Mathf.Atan2(-dir.y, -dir.x) * Mathf.Rad2Deg;
@@ -29,7 +29,7 @@ public class bulletScript : MonoBehaviour
     {
         //tar player pos och homar in
         Vector3 dir = player.transform.position - transform.position;
-        rb.velocity += new Vector2(dir.x, dir.y).normalized / home;
+        rb.linearVelocity += new Vector2(dir.x, dir.y).normalized / home;
 
         //roterar bullet
         float rot = Mathf.Atan2(-dir.y, -dir.x) * Mathf.Rad2Deg;

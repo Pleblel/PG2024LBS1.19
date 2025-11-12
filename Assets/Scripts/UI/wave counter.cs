@@ -11,6 +11,8 @@ public class wavecounter : MonoBehaviour
 
     TextMeshProUGUI textComponent;
 
+    public GameObject victoryScreen;
+
     
     void Start()
     {
@@ -23,6 +25,10 @@ public class wavecounter : MonoBehaviour
     {
         string waves = "Wave: " + (waveControl.currentWaveIndex + 1);
         textComponent.text = waves;
+        if(waveControl.currentWaveIndex >= 4)
+        {
+            victoryScreen.SetActive(true);
+        }
     }
 }
 

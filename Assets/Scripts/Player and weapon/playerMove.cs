@@ -43,7 +43,7 @@ public class playerMove : MonoBehaviour
         //kollar om man klickar wasd
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-        //sätter rikting
+        //sï¿½tter rikting
         moveDir = new Vector2(moveX, moveY).normalized;
 
         if (Input.GetButtonDown("Jump") && canRoll)
@@ -60,10 +60,10 @@ public class playerMove : MonoBehaviour
             return;
         }
         //flyttar spelaren
-        rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
+        rb.linearVelocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
 
         //Walk run audio HERE!
-        if (Mathf.Abs(rb.velocity.magnitude) > WalkingVolume)
+        if (Mathf.Abs(rb.linearVelocity.magnitude) > WalkingVolume)
         {
             counting++;
             if (counting == 10)
@@ -74,20 +74,20 @@ public class playerMove : MonoBehaviour
         }
 
         // Updates "xVelocity" variable in the Animator depending on Velocity of Player. - Elm
-        animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.magnitude));
+        animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.magnitude));
     }
 
     IEnumerator Roll()
     {
-        //flyttar spelaren och säger att man rullar
+        //flyttar spelaren och sï¿½ger att man rullar
         canRoll = false;
         isRolling = true;
-        rb.velocity += new Vector2(moveDir.x * rollingSpeed, moveDir.y * rollingSpeed );
+        rb.linearVelocity += new Vector2(moveDir.x * rollingSpeed, moveDir.y * rollingSpeed );
         tr.emitting = true;
         //DASH AUDIO HERE!
         SoundFXManager.instance.PlaySoundFXclip(SFXDash, transform, RollingVolume);
 
-        //startar cooldown och säger att man inte rullar
+        //startar cooldown och sï¿½ger att man inte rullar
         yield return new WaitForSeconds(rollingTime);
         isRolling = false;
         tr.emitting = false;

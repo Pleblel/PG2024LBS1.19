@@ -3,19 +3,31 @@ using TMPro;
 
 public class EndlessTimer : MonoBehaviour
 {
-    float timer = -0.49f;
     public TextMeshProUGUI textcomponent;
+    public PlayerHealth playerHealth;  // Referens till PlayerHealth
+    float timer;
 
-    // Start is called before the first frame update
     void Start()
     {
+       
         textcomponent = GetComponent<TextMeshProUGUI>();
+        if (playerHealth == null)
+            playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        // Uppdatera texten
         textcomponent.text = "You have survived for " + Mathf.Round(timer) + " seconds!";
+
+        if (playerHealth.isDead == null) return;
+
+        if (playerHealth.isDead == false)
+        {
+            timer += Time.deltaTime;
+        }
+       
+
+        
     }
 }

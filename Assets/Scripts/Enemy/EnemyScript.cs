@@ -26,6 +26,6 @@ public class EnemyScript : MonoBehaviour
         // Creates a vector of a desired magnitude that points towards the player. The vector is applied to the velocity. - Elm
         dir = Player.transform.position - transform.position;
         Vector2 dirForce = dir.normalized * mvmSpeedEnemy;
-        EnemyRigidBody.velocity = dirForce;
+        EnemyRigidBody.linearVelocity = dirForce;
     }
 }

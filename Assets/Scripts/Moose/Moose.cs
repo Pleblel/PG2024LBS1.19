@@ -33,7 +33,7 @@ public class Moose : MonoBehaviour
         // Finds player position relative to the gameObject - Elm
         Vector2 pos = Player.transform.position - gameObject.transform.position;
 
-        // Flip the sprite depending on whether the enemy is to the left or right of the Player. - Elm (med kodhjälp från Pelle)
+        // Flip the sprite depending on whether the enemy is to the left or right of the Player. - Elm (med kodhjï¿½lp frï¿½n Pelle)
         if (pos.x > 0)
         {
             sr.flipX = true;
@@ -55,7 +55,7 @@ public class Moose : MonoBehaviour
             // Creates a vector of a desired magnitude that points towards the player. The vector is applied to the velocity. 
             dir = Player.transform.position - transform.position;
             Vector2 dirForce3 = dir.normalized * MARS;
-            MooseRigidBody.velocity = dirForce3;
+            MooseRigidBody.linearVelocity = dirForce3;
             //resets cooldown
             countingCooldown = 0f;
             return;
@@ -65,7 +65,7 @@ public class Moose : MonoBehaviour
           //keeps a set distance between player and boss
           Vector2 Mooserandom = new Vector2(newPlayerPos.x * -1, newPlayerPos.y * -1);
           Vector2 dirForce2 = Mooserandom.normalized * mvmSpeedMoose;
-          MooseRigidBody.velocity = dirForce2;
+          MooseRigidBody.linearVelocity = dirForce2;
             countingCooldown += Time.deltaTime;
             
            return;
@@ -73,7 +73,7 @@ public class Moose : MonoBehaviour
         // Creates a vector of a desired magnitude that points towards the player. The vector is applied to the velocity. 
         dir = Player.transform.position - transform.position;
         Vector2 dirForce = dir.normalized * mvmSpeedMoose;
-        MooseRigidBody.velocity = dirForce;
+        MooseRigidBody.linearVelocity = dirForce;
         countingCooldown++;
     }
 

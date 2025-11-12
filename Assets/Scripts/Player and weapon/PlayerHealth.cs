@@ -8,7 +8,10 @@ public class PlayerHealth : MonoBehaviour
     PlayerDeath playerdeath;
     public HealthBar healthbar;
     private bool playerNotDead = false;
-
+    public GameObject bloodyScreen;
+    public GameObject defeat;
+    public EndlessTimer playerAlive;
+    public bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,12 @@ public class PlayerHealth : MonoBehaviour
             currenthealth = MaxHealth;
             healthbar.SetMaxHealth(MaxHealth);
         }
+        if (currenthealth <= 30)
+        {
+            bloodyScreen.SetActive(true);
+        }
+       
+        
     }
 
     // Call this method to apply damage to the attached gameObject - Lucas
@@ -45,6 +54,9 @@ public class PlayerHealth : MonoBehaviour
         {
             DeathOfPlayer();
             playerNotDead = true;
+            defeat.SetActive(true);
+            isDead = true;
+            
         }
     }
 
