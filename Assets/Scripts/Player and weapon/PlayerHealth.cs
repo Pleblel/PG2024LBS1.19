@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject defeat;
     public EndlessTimer playerAlive;
     public bool isDead = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -52,12 +54,15 @@ public class PlayerHealth : MonoBehaviour
         // If the players health reaches 0, the player death method is called. - Elm
         if (currenthealth <= 0 && playerNotDead == false)
         {
+            Invoke("ChangeScene", 3f);
+            isDead = true;
             DeathOfPlayer();
             playerNotDead = true;
             defeat.SetActive(true);
-            isDead = true;
             
+
         }
+       
     }
 
     // Gets called when player dies. - Elm
@@ -71,6 +76,10 @@ public class PlayerHealth : MonoBehaviour
 
         // Disables player. - Elm
         gameObject.SetActive(false);
+    }
+    void ChangeScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 
