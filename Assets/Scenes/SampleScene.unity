@@ -6808,6 +6808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveCounter: {fileID: 1171371017}
   victoryScreen: {fileID: 935368900}
+  victoryClip: {fileID: 8300000, guid: ffa3851ab82adc34bad3a7949e8f9aab, type: 3}
 --- !u!222 &1171371021
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10878,6 +10879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DMGSFX: {fileID: 8300000, guid: 3ba15c95e5cf56043997c17b291bb6f0, type: 3}
+  defeatClip: {fileID: 8300000, guid: 83f343bcb9a0cf04083e1e0855823e72, type: 3}
   MaxHealth: 100
   currenthealth: 0
   healthbar: {fileID: 1506659849}

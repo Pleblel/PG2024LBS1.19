@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private AudioClip DMGSFX;
+    [SerializeField] private AudioClip defeatClip;
     public int MaxHealth = 100;
     public float currenthealth;
     PlayerDeath playerdeath;
@@ -55,6 +56,7 @@ public class PlayerHealth : MonoBehaviour
         if (currenthealth <= 0 && playerNotDead == false)
         {
             Invoke("ChangeScene", 3f);
+            SoundFXManager.instance.PlaySoundFXclip(defeatClip, transform, 1f);
             isDead = true;
             DeathOfPlayer();
             playerNotDead = true;

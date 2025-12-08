@@ -12,6 +12,7 @@ public class wavecounter : MonoBehaviour
     TextMeshProUGUI textComponent;
 
     public GameObject victoryScreen;
+    [SerializeField] private AudioClip victoryClip;
 
     
     void Start()
@@ -28,6 +29,7 @@ public class wavecounter : MonoBehaviour
         if(waveControl.currentWaveIndex >= 4)
         {
             victoryScreen.SetActive(true);
+            SoundFXManager.instance.PlaySoundFXclip(victoryClip, transform, 1f);
         }
     }
 }
